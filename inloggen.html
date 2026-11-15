@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inloggen bij EasyBY</title>
+  <meta name="description" content="Ga naar het klantenservicebord van je winkel.">
+  <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__in">
+      <a class="wordmark" href="index.html" aria-label="EasyBY, naar de voorpagina">Easy<span>BY</span></a>
+      <nav class="nav__links" aria-label="Hoofdmenu">
+        <a href="index.html#wat-we-doen">Wat we doen</a>
+        <a href="index.html#klantenservice">Klantenservice</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="login">
+    <div class="container">
+      <form class="tile login__card" id="naar-bord" novalidate>
+        <div class="streepjes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <h1>Inloggen</h1>
+        <p class="lead">Naar het klantenservicebord van je winkel.</p>
+
+        <div class="field">
+          <label for="winkel">Naam van je winkel</label>
+          <div class="input" id="winkel-veld">
+            <input id="winkel" name="winkel" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="jouwwinkel" required pattern="[a-z0-9-]+" aria-describedby="winkel-fout">
+            <span aria-hidden="true">.easy-by.nl</span>
+          </div>
+          <p class="error" id="winkel-fout" role="alert"></p>
+        </div>
+
+        <button class="btn btn--ink" type="submit">Naar mijn bord</button>
+
+        <p class="login__note">Op je bord log je in met je wachtwoord en authenticator. Geen account? Vraag de eigenaar van je winkel om een uitnodiging.</p>
+        <noscript><p class="login__note">Ga direct naar jouwwinkel.easy-by.nl, met de naam van je winkel.</p></noscript>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById('naar-bord');
+      var input = document.getElementById('winkel');
+      var veld = document.getElementById('winkel-veld');
+      var fout = document.getElementById('winkel-fout');
+      try { var vorige = localStorage.getItem('easyby-winkel'); if (vorige) input.value = vorige; } catch (e) {}
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Alleen een geldige subdomeinnaam: kleine letters, cijfers en streepjes.
+        var naam = input.value.trim().toLowerCase().replace(/\.easy-by\.nl$/, '');
+        if (!/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(naam) || naam === 'www') {
+          veld.setAttribute('data-invalid', '');
+          fout.textContent = 'Gebruik alleen kleine letters, cijfers en streepjes, zoals jouwwinkel.';
+          input.focus();
+          return;
+        }
+        veld.removeAttribute('data-invalid');
+        fout.textContent = '';
+        try { localStorage.setItem('easyby-winkel', naam); } catch (e) {}
+        window.location.href = 'https://' + naam + '.easy-by.nl/';
+      });
+    })();
+  </script>
+</body>
+</html>
