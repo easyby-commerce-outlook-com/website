@@ -477,3 +477,9 @@
   .timeline li { grid-row: span 4; grid-template-rows: subgrid; }
   .timeline__tag, .timeline .btn { align-self: end; }
 }
+/* Waarom nu: drie punten op antraciet, met een knop */
+.never--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.board__cta { margin-top: var(--space-xl); }
+.btn--light { background: var(--color-paper); color: var(--color-ink); box-shadow: var(--shadow-sm); }
+.btn--light:hover { background: var(--color-green-tint); }
+@media (max-width: 60rem) { .never--3 { grid-template-columns: minmax(0, 1fr); } }
