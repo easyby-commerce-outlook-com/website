@@ -504,3 +504,151 @@
 .r-teaser__body p { color: var(--color-ink-2); }
 .r-teaser__body .btn { margin-top: var(--space-xs); }
 .actions--tight { margin-top: 0; }
+
+/* Nette regelafbreking: geen woord alleen op de laatste regel, geen afbreking bij een koppelteken */
+body { text-wrap: pretty; }
+.nobr { white-space: nowrap; }
+.hero h1 { max-width: 16ch; }
+@media (max-width: 72rem) {
+  .run__intro h2, .split__text h2 { font-size: var(--text-2xl); }
+}
+
+/* Wist je dat: AI-overzicht in Google, met een illustratie van een zoekpagina */
+.split--wistje { align-items: center; }
+.split--wistje .split__text .label { margin-bottom: calc(var(--space-xs) * -1); }
+.serp { margin: 0; display: grid; gap: var(--space-md); padding: var(--space-lg); background: var(--color-surface); border: var(--line-hair) solid var(--color-rule); border-radius: var(--radius-tile); box-shadow: var(--shadow-md); }
+.serp__bar { display: flex; align-items: center; gap: var(--space-sm); min-height: 48px; padding: 0 var(--space-md); background: var(--color-paper); border: var(--line-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); color: var(--color-ink); font-size: var(--text-sm); }
+.serp__bar svg { width: 18px; height: 18px; color: var(--color-muted); flex: none; }
+.serp__ai { padding: var(--space-md) var(--space-lg); background: var(--color-paper); border: var(--line-strong) solid var(--color-green); border-radius: var(--radius-tile); font-size: var(--text-sm); box-shadow: var(--shadow-sm); }
+.serp__ai-kop { display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-xs); font-weight: var(--weight-semibold); color: var(--color-green-dark); }
+.serp__ai-kop svg { width: 18px; height: 18px; flex: none; }
+.serp__ai p { color: var(--color-ink-2); }
+.serp__ai ul { margin: var(--space-xs) 0 0; padding-left: var(--space-lg); display: grid; gap: var(--space-2xs); }
+.serp__ai li::marker { color: var(--color-green); }
+.serp__jij { color: var(--color-muted); }
+.serp__jij b { display: inline-block; padding: 0 var(--space-xs); border: var(--line-hair) dashed var(--color-faint); border-radius: var(--radius-chip); font-weight: var(--weight-semibold); }
+.serp__results { display: grid; gap: var(--space-sm); opacity: 0.55; }
+.serp__result { display: grid; gap: var(--space-2xs); padding: var(--space-sm) var(--space-md); background: var(--color-paper); border-radius: var(--radius-tile); }
+.serp__result i { display: block; height: 8px; border-radius: var(--radius-chip); background: var(--color-track); }
+.serp__result i:nth-child(1) { width: 45%; height: 10px; background: var(--color-rule-2); }
+.serp__result i:nth-child(2) { width: 90%; }
+.serp__result i:nth-child(3) { width: 70%; }
+.serp figcaption { font-size: var(--text-xs); color: var(--color-muted); }
+
+/* Beweging: het AI-overzicht schuift erin en duwt de zoekresultaten omlaag */
+@keyframes serp-ai { from { opacity: 0; transform: scaleY(0.6); } to { opacity: 1; transform: none; } }
+@keyframes serp-duw { from { translate: 0 -56px; } to { translate: 0 0; } }
+@keyframes serp-jij { 0%, 100% { border-color: var(--color-faint); } 50% { border-color: var(--color-green); } }
+.beweeg .serp.reveal { opacity: 1; }
+.beweeg .serp.reveal.is-in { animation: none; }
+.beweeg .serp.is-in .serp__ai { transform-origin: top center; animation: serp-ai var(--dur-long) var(--ease-out) 300ms both; }
+.beweeg .serp.is-in .serp__results { animation: serp-duw var(--dur-long) var(--ease-out) 300ms both; }
+.beweeg .serp.is-in .serp__jij b { animation: serp-jij 1.6s var(--ease-in-out) 900ms 2; }
+.beweeg .serp:not(.is-in) .serp__ai { opacity: 0; }
+.hero h1.breed { max-width: 22ch; }
+
+/* Wist je dat: carrousel met twee dia's die automatisch wisselen */
+.carrousel__kop { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.carrousel__kop .streepjes--kop { margin-bottom: var(--space-sm); }
+.carrousel__bediening { display: none; align-items: center; gap: var(--space-xs); }
+.carrousel__stip { position: relative; width: 48px; height: 32px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.carrousel__stip span { position: absolute; left: 4px; right: 4px; top: 50%; height: var(--space-2xs); translate: 0 -50%; border-radius: var(--radius-chip); background: var(--color-rule); overflow: hidden; }
+.carrousel__stip span::after { content: ""; position: absolute; inset: 0; background: var(--color-green); transform: scaleX(0); transform-origin: left center; }
+.carrousel__stip.is-actief span::after { transform: scaleX(1); }
+.carrousel--loopt .carrousel__stip.is-actief span::after { transform: scaleX(0); animation: carrousel-voortgang var(--carrousel-interval, 8000ms) linear forwards; }
+.carrousel--gepauzeerd .carrousel__stip.is-actief span::after { animation-play-state: paused; }
+@keyframes carrousel-voortgang { to { transform: scaleX(1); } }
+.carrousel__stip:focus-visible, .carrousel__pauze:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.carrousel__pauze { display: grid; place-items: center; width: 36px; height: 36px; margin-left: var(--space-xs); padding: 0; border: var(--line-hair) solid var(--color-rule-2); border-radius: 50%; background: var(--color-paper); color: var(--color-ink); cursor: pointer; }
+.carrousel__pauze:hover { border-color: var(--color-ink); }
+.carrousel__pauze svg { width: 14px; height: 14px; }
+.carrousel__pauze .ico-speel, .carrousel--gepauzeerd .carrousel__pauze .ico-pauze { display: none; }
+.carrousel--gepauzeerd .carrousel__pauze .ico-speel { display: block; }
+/* Zonder JavaScript staan de dia's onder elkaar */
+.carrousel__baan { display: grid; gap: var(--space-2xl); }
+.carrousel--actief .carrousel__bediening { display: flex; }
+.carrousel--actief .carrousel__baan { gap: 0; }
+.carrousel--actief .carrousel__dia { grid-area: 1 / 1; opacity: 0; visibility: hidden; translate: 24px 0; transition: opacity var(--dur-long) var(--ease-out), translate var(--dur-long) var(--ease-out), visibility 0s linear var(--dur-long); }
+.carrousel--actief .carrousel__dia.is-actief { opacity: 1; visibility: visible; translate: 0 0; transition: opacity var(--dur-long) var(--ease-out), translate var(--dur-long) var(--ease-out), visibility 0s; }
+
+/* Dia 1: het CBS-cijfer met 100 stippen, waarvan 57 groen */
+.stat { margin: 0; display: grid; gap: var(--space-lg); padding: var(--space-xl); background: var(--color-surface); border: var(--line-hair) solid var(--color-rule); border-radius: var(--radius-tile); box-shadow: var(--shadow-md); }
+.stat__cijfer { display: flex; align-items: baseline; gap: var(--space-sm); }
+.stat__getal { font-size: var(--text-display); font-weight: var(--weight-bold); letter-spacing: var(--tracking-display); line-height: 1; color: var(--color-green-dark); font-variant-numeric: tabular-nums; }
+.stat__eenheid { font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--color-ink); }
+.stat__stippen { display: grid; grid-template-columns: repeat(20, minmax(0, 1fr)); gap: 6px; }
+.stat__stippen i { aspect-ratio: 1; border-radius: 50%; background: var(--color-rule); }
+.stat__stippen i.is-aan { background: var(--color-green); }
+.stat figcaption { font-size: var(--text-xs); color: var(--color-muted); }
+@media (max-width: 40rem) { .stat { padding: var(--space-lg); } .stat__stippen { gap: 4px; } .carrousel__kop { align-items: center; } }
+
+/* Beweging in dia 1: de stippen kleuren een voor een groen */
+.beweeg .stat.reveal { opacity: 1; }
+.beweeg .stat.reveal.is-in { animation: none; }
+.beweeg .stat__stippen i.is-aan { transition: background-color var(--dur-short) var(--ease-out); }
+.beweeg .stat:not(.is-in) .stat__stippen i.is-aan { background: var(--color-rule); transition: none; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(1) { transition-delay: 214ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(2) { transition-delay: 228ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(3) { transition-delay: 242ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(4) { transition-delay: 256ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(5) { transition-delay: 270ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(6) { transition-delay: 284ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(7) { transition-delay: 298ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(8) { transition-delay: 312ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(9) { transition-delay: 326ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(10) { transition-delay: 340ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(11) { transition-delay: 354ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(12) { transition-delay: 368ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(13) { transition-delay: 382ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(14) { transition-delay: 396ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(15) { transition-delay: 410ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(16) { transition-delay: 424ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(17) { transition-delay: 438ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(18) { transition-delay: 452ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(19) { transition-delay: 466ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(20) { transition-delay: 480ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(21) { transition-delay: 494ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(22) { transition-delay: 508ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(23) { transition-delay: 522ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(24) { transition-delay: 536ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(25) { transition-delay: 550ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(26) { transition-delay: 564ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(27) { transition-delay: 578ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(28) { transition-delay: 592ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(29) { transition-delay: 606ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(30) { transition-delay: 620ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(31) { transition-delay: 634ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(32) { transition-delay: 648ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(33) { transition-delay: 662ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(34) { transition-delay: 676ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(35) { transition-delay: 690ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(36) { transition-delay: 704ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(37) { transition-delay: 718ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(38) { transition-delay: 732ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(39) { transition-delay: 746ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(40) { transition-delay: 760ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(41) { transition-delay: 774ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(42) { transition-delay: 788ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(43) { transition-delay: 802ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(44) { transition-delay: 816ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(45) { transition-delay: 830ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(46) { transition-delay: 844ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(47) { transition-delay: 858ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(48) { transition-delay: 872ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(49) { transition-delay: 886ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(50) { transition-delay: 900ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(51) { transition-delay: 914ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(52) { transition-delay: 928ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(53) { transition-delay: 942ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(54) { transition-delay: 956ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(55) { transition-delay: 970ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(56) { transition-delay: 984ms; }
+.beweeg .stat.is-in .stat__stippen i:nth-child(57) { transition-delay: 998ms; }
+.carrousel h2 { font-size: clamp(1.75rem, 1.6vw + 1.1rem, 2.75rem); max-width: 22ch; }
+.carrousel__dia { align-content: start; }
+@media (min-width: 60.01rem) { .carrousel__dia { align-content: center; } }
+@media (max-width: 60rem) {
+  /* Op smalle schermen volgt de hoogte de zichtbare dia, zodat er geen gat ontstaat */
+  .carrousel--actief .carrousel__baan { position: relative; }
+  .carrousel--actief .carrousel__dia:not(.is-actief) { position: absolute; inset: 0 0 auto 0; }
+}
