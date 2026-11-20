@@ -467,3 +467,13 @@
   .beweeg .timeline li:not(:last-child)::after { transform: scaleY(0); }
   .beweeg .timeline.is-in li:not(:last-child)::after { transform: scaleY(1); }
 }
+
+/* Tijdlijn: label en knop even groot en op één lijn */
+.timeline__tag, .timeline .btn { min-height: 40px; min-width: 12.5rem; padding: 0 var(--space-md); font-size: var(--text-sm); font-weight: var(--weight-semibold); border-radius: var(--radius-tile); }
+.timeline__tag { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); margin-top: var(--space-xs); border: var(--line-hair) solid var(--color-green); background: var(--color-green-tint); color: var(--color-green-dark); }
+.timeline__tag svg { width: 16px; height: 16px; flex: none; }
+@media (min-width: 40.01rem) {
+  .timeline { grid-template-rows: repeat(4, auto); }
+  .timeline li { grid-row: span 4; grid-template-rows: subgrid; }
+  .timeline__tag, .timeline .btn { align-self: end; }
+}
