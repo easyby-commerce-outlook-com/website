@@ -354,3 +354,9 @@
 @media (max-width: 40rem) {
   .preview .r-sheet--a, .preview .r-sheet--b, .preview figcaption { position: relative; inset: auto; top: auto; width: 100%; }
 }
+.hero h1.belofte { max-width: none; }
+.belofte span { display: block; }
+/* Eén rapportblad naast de tekst: geen overlap */
+.preview.preview--single .r-sheet, .preview.preview--single figcaption { position: relative; inset: auto; top: auto; width: 100%; max-width: 520px; }
+.hero h1.belofte { font-size: clamp(2.25rem, 3.2vw + 1rem, 4.5rem); }
+.belofte span { white-space: nowrap; }
