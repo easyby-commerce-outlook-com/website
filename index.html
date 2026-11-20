@@ -3,21 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EasyBY</title>
-  <meta name="description" content="EasyBY automatiseert het terugkerende werk van je webshop, te beginnen bij de klantenservice.">
+  <title>EasyBY: tijdwinst en AI-vindbaarheid voor ondernemers</title>
+  <meta name="description" content="EasyBY automatiseert het regelwerk van ondernemers en laat zien hoe AI je winkel vindt. Gratis mini-scan, AI-scan voor € 395 excl. btw.">
   <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="site.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://easy-by.nl/#organisatie",
+      "name": "EasyBY V.O.F.",
+      "url": "https://easy-by.nl/",
+      "slogan": "Minder regelen. Meer ondernemen.",
+      "email": "hallo@easy-by.nl",
+      "areaServed": "NL",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "KvK",
+        "value": "96182245"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Tijdwinst: automatisering voor ondernemers",
+      "provider": {
+        "@id": "https://easy-by.nl/#organisatie"
+      },
+      "url": "https://easy-by.nl/tijdwinst.html",
+      "description": "Uitzoeken waar ondernemers tijd verliezen, dat op een rij zetten in een Tijdwinstrapport en er een passende automatisering voor bouwen."
+    },
+    {
+      "@type": "Service",
+      "name": "AI-scan: AI-vindbaarheid voor winkels",
+      "provider": {
+        "@id": "https://easy-by.nl/#organisatie"
+      },
+      "url": "https://easy-by.nl/ai-scan.html",
+      "description": "Laten zien hoe een winkel gevonden wordt in ChatGPT, Gemini en Google, wat AI over de winkel vertelt en wie AI wél noemt.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Mini-scan",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "AI-scan (rapport en gesprek)",
+          "price": "395.00",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "395.00",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="nav">
     <div class="container nav__in">
       <a class="wordmark" href="index.html" aria-label="EasyBY, naar de voorpagina">Easy<span>BY</span></a>
       <nav class="nav__links" aria-label="Hoofdmenu">
-        <a href="#wat-we-doen">Wat we doen</a>
-        <a href="#klantenservice">Klantenservice</a>
-        <a href="#vragen">Vragen</a>
+        <a href="tijdwinst.html">Tijdwinst</a>
+        <a href="ai-scan.html">AI-scan</a>
+        <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
+        <a href="index.html#over-ons">Over ons</a>
+        <a href="index.html#vragen">Vragen</a>
       </nav>
-      <a class="btn btn--ink btn--sm" href="inloggen.html">Inloggen</a>
+      <a class="nav__login" href="inloggen.html">Inloggen</a>
+      <a class="btn btn--ink btn--sm" href="index.html#mini-scan">Gratis mini-scan</a>
     </div>
   </header>
 
@@ -26,92 +88,161 @@
       <div class="container hero__grid">
         <div>
           <div class="streepjes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <h1>Ondernemen zonder het handwerk.</h1>
-          <p class="lead">EasyBY automatiseert het terugkerende werk van je webshop.</p>
+          <h1 class="belofte">Minder regelen. Meer ondernemen.</h1>
+          <p class="lead">EasyBY zoekt uit waar je tijd verliest en automatiseert dat werk. En we laten zien hoe AI over je winkel praat, en wie AI wél noemt.</p>
           <div class="actions">
-            <a class="btn btn--ink" href="#klantenservice">Zo werkt het</a>
-            <a class="btn btn--line" href="inloggen.html">Inloggen</a>
+            <a class="btn btn--ink" href="#mini-scan">Gratis mini-scan</a>
+            <a class="btn btn--line" href="voorbeeldrapport.html">Bekijk een voorbeeldrapport</a>
           </div>
         </div>
 
-        <figure class="paperwork" aria-label="Een klantmail en het concept-antwoord dat EasyBY klaarzet">
-          <div class="tile mail">
-            <dl class="meta">
-              <dt>Van</dt><dd>een klant</dd>
-              <dt>Onderwerp</dt><dd>Waar blijft mijn bestelling?</dd>
-            </dl>
-            <p>Hoi, ik heb vorige week besteld (<span class="num">#1042</span>) maar nog niets gezien. Kunnen jullie even kijken?</p>
-          </div>
-          <div class="tile sheet">
-            <div class="sheet__head"><strong>Concept-antwoord</strong> <span class="chip">tracking</span></div>
-            <p>Hoi! Je bestelling <span class="num">#1042</span> is gisteren verstuurd met PostNL en wordt morgen bezorgd.</p>
-            <p>Je kunt hem volgen met de track &amp; trace in je verzendmail.</p>
-            <div class="settled">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg>
-              Goedgekeurd en verstuurd
+        <figure class="preview">
+          <div class="r-sheet r-sheet--a" aria-label="Voorbeeld: samenvatting van een AI-scanrapport">
+            <div class="r-head"><span class="wordmark">Easy<span>BY</span></span><span>AI-scan · Atelier Linde</span></div>
+            <span class="label label--green">Samenvatting</span>
+            <p class="r-title">AI noemt Atelier Linde nog weinig</p>
+            <div class="r-tiles">
+              <div class="r-tile r-tile--dark"><div class="label">Share of voice</div><div class="r-figure">9<span> van 36</span></div><div class="r-unit">lijstantwoorden noemen de winkel</div></div>
+              <div class="r-tile r-tile--green"><div class="label">Kansen</div><div class="r-figure">3</div><div class="r-unit">met de meeste directe impact</div></div>
+              <div class="r-tile"><div class="label">Juist beeld</div><div class="r-figure">15<span> van 24</span></div><div class="r-unit">antwoorden kloppen</div></div>
             </div>
           </div>
+          <div class="r-sheet r-sheet--b" aria-label="Voorbeeld: samenvatting van een Tijdwinstrapport">
+            <div class="r-head"><span class="wordmark">Easy<span>BY</span></span><span>Tijdwinstrapport</span></div>
+            <div class="r-tiles" style="--tiles: 2">
+              <div class="r-tile r-tile--dark"><div class="label">Tijdlekken</div><div class="r-figure">6,5<span> uur</span></div><div class="r-unit">per week</div></div>
+              <div class="r-tile r-tile--green"><div class="label">Besparing</div><div class="r-figure">€ 10.465</div><div class="r-unit">per jaar</div></div>
+            </div>
+            <div class="r-bars">
+              <div class="r-bar"><span class="r-bar__name">Offertes overtypen</span><span class="r-bar__track"><span class="r-bar__fill" style="--v: 1"></span></span><span class="r-bar__value">3 u/wk</span></div>
+              <div class="r-bar"><span class="r-bar__name">Facturen inboeken</span><span class="r-bar__track"><span class="r-bar__fill" style="--v: 0.5"></span></span><span class="r-bar__value">1,5 u/wk</span></div>
+            </div>
+          </div>
+          <figcaption>Uit onze rapporten. Voorbeeld met verzonnen gegevens.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section" id="wat-we-doen">
+    <section class="section" id="diensten">
       <div class="container">
         <div class="section__head">
-          <h2>Wat EasyBY doet</h2>
-          <p class="lead">Het werk dat elke dag terugkomt, nemen wij over. Jij houdt de beslissingen.</p>
+          <h2>Twee diensten</h2>
+          <p class="lead">Binnen tijd terugwinnen, buiten beter gevonden worden. Allebei beginnen met meten, en met een rapport dat laat zien wat het oplevert.</p>
         </div>
-        <ul class="rows">
-          <li>
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"/><path d="M3 7l9 6l9 -6"/></svg></span>
-            <h3>Klantenservice</h3>
-            <p>Mail wordt gesorteerd, de bestelling erbij gezocht en een antwoord klaargezet.</p>
-            <span class="state state--live">Beschikbaar</span>
-          </li>
-          <li>
-            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065"/><path d="M10 9v6l5 -3l-5 -3"/></svg></span>
-            <h3>Andere workflows</h3>
-            <p>Terugkerend werk in je winkel, één voor één geautomatiseerd.</p>
-            <span class="state">In ontwikkeling</span>
-          </li>
-        </ul>
+        <div class="services">
+          <article class="tile service">
+            <div class="service__top"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 12l3 2" /><path d="M12 7v5" /></svg></span><span class="label">Automatisering</span></div>
+            <h3>Tijdwinst</h3>
+            <p>We zoeken uit waar je tijd verliest, zetten dat op een rij en bouwen er een passende automatisering voor.</p>
+            <ol class="flow" aria-label="Werkwijze">
+              <li>Ontdekken</li><li>In kaart brengen</li><li>Automatiseren</li><li>Tijd winnen</li>
+            </ol>
+            <dl class="service__facts">
+              <dt>Je krijgt</dt><dd>Een bedrijfsbezoek en een Tijdwinstrapport, daarna een automatiseringsproject</dd>
+              <dt>Prijs</dt><dd>Maatwerk. Het rapport laat eerst zien wat je bespaart</dd>
+            </dl>
+            <a class="btn btn--ink" href="tijdwinst.html">Meer over Tijdwinst</a>
+          </article>
+          <article class="tile service">
+            <div class="service__top"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12" /><path d="M9.5 9h.01" /><path d="M14.5 9h.01" /><path d="M9.5 13a3.5 3.5 0 0 0 5 0" /></svg></span><span class="label">AI-vindbaarheid</span></div>
+            <h3>AI-scan</h3>
+            <p>Hoe vinden klanten je winkel als ze ChatGPT, Gemini of Google om advies vragen? Wat vertelt AI over je, en wie noemt AI wél?</p>
+            <ol class="flow" aria-label="Werkwijze">
+              <li>Mini-scan</li><li>AI-scan</li><li>Rapport en gesprek</li><li>Optimaliseren</li><li>Hermeten</li>
+            </ol>
+            <dl class="service__facts">
+              <dt>Je krijgt</dt><dd>Een rapport met share of voice, feitencheck en maximaal 3 kansen, plus een gesprek</dd>
+              <dt>Prijs</dt><dd>Mini-scan gratis, AI-scan € 395 excl. btw</dd>
+            </dl>
+            <a class="btn btn--ink" href="ai-scan.html">Meer over de AI-scan</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="klantenservice">
-      <div class="container run">
-        <div class="run__intro">
-          <h2>Klantenservice, in drie stappen</h2>
-          <p>Werkt met je eigen postbus en Shopify.</p>
+    <section class="section" id="aanbod">
+      <div class="container">
+        <div class="section__head">
+          <h2>Wat het kost</h2>
+          <p class="lead">Een vaste prijs waar het kan, maatwerk waar het moet. Je weet altijd vooraf waar je aan toe bent.</p>
         </div>
-        <ol class="steps">
-          <li class="tile step">
-            <h3>Meelezen</h3>
-            <p>EasyBY leest je postbus mee en laat per mail zien wat het zou doen. Er gaat niets de deur uit.</p>
+        <ul class="offer">
+          <li class="tile">
+            <span class="label">AI-vindbaarheid</span>
+            <h3>Mini-scan</h3>
+            <p>3 vragen in ChatGPT en Gemini, met een scorebord en een feitencheck. Als mail, zonder bijlage.</p>
+            <div><p class="price">Gratis</p><a class="btn btn--line" href="#mini-scan">Aanvragen</a></div>
           </li>
-          <li class="tile step">
-            <h3>Concepten</h3>
-            <p>Bij elke vraag staat een antwoord klaar. Jij leest, past aan en verstuurt.</p>
+          <li class="tile offer--main">
+            <span class="label label--green">AI-vindbaarheid</span>
+            <h3>AI-scan</h3>
+            <p>10 vragen in ChatGPT, Gemini en Google, elk 2 keer. Share of voice, feitencheck en maximaal 3 kansen, plus een gesprek van ongeveer een uur (online).</p>
+            <div><p class="price">€ 395<small>excl. btw, vooraf betaald</small></p><a class="btn btn--ink" href="ai-scan.html">Zo werkt het</a></div>
           </li>
-          <li class="tile step">
-            <h3>Automatisch</h3>
-            <p>Vertrouw je een soort vraag, zoals track &amp; trace? Dan gaat dat antwoord voortaan vanzelf.</p>
+          <li class="tile">
+            <span class="label">AI-vindbaarheid</span>
+            <h3>Optimalisatie</h3>
+            <p>We voeren de 3 kansen uit het rapport uit en meten daarna opnieuw, zodat je ziet wat het heeft gedaan.</p>
+            <div><p class="price">Offerte<small>op maat, na het gesprek</small></p><a class="btn btn--line" href="ai-scan.html#werkwijze">Werkwijze</a></div>
           </li>
-        </ol>
+        </ul>
+        <div class="offer__extra">
+          <p><strong>Tijdwinst</strong> is altijd maatwerk. Na het bedrijfsbezoek zie je in het Tijdwinstrapport hoeveel uur en geld je bespaart, voordat je ergens aan vastzit.</p>
+          <a class="btn btn--line" href="tijdwinst.html">Meer over Tijdwinst</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="split__text">
+          <span class="label label--green">Al gebouwd</span>
+          <h2>Klantenservice die zichzelf sorteert</h2>
+          <p>Een voorbeeld van Tijdwinst in de praktijk: mail wordt gesorteerd, de bestelling erbij gezocht en een antwoord klaargezet. Werkt met je eigen postbus en Shopify. Jij houdt de beslissingen.</p>
+          <a class="btn btn--line" href="klantenservice.html">Bekijk hoe het werkt</a>
+        </div>
+        <ul class="rows">
+          <li>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg></span>
+            <h3>Klantenservice</h3>
+            <p>Concept-antwoorden bij elke vraag, automatisch waar je dat vertrouwt.</p>
+            <span class="state state--live">Beschikbaar</span>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 12l3 2" /><path d="M12 7v5" /></svg></span>
+            <h3>Jouw tijdlek</h3>
+            <p>Offertes, facturen, planning: wat in het rapport bovenaan staat, pakken we als eerste aan.</p>
+            <span class="state">Op maat</span>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="section board">
       <div class="container">
         <div class="section__head">
-          <h2>Wat er nooit gebeurt</h2>
-          <p class="lead">Klantgegevens zijn geen speelgoed. Dit staat vast in de code.</p>
+          <h2>Waar je op kunt rekenen</h2>
+          <p class="lead">Afspraken die in elk rapport en elk project terugkomen.</p>
         </div>
         <ul class="never">
-          <li><strong>Geen beloftes zonder beleid</strong><span>Het systeem antwoordt alleen met wat in jouw beleid staat.</span></li>
-          <li><strong>Geen klachten zonder mens</strong><span>Boze klanten, schade en privacyvragen gaan altijd naar jou.</span></li>
-          <li><strong>Geen leesbare opslag</strong><span>Alles wat klanten schrijven staat versleuteld op een server in de EU.</span></li>
-          <li><strong>Geen kosten zonder grens</strong><span>Een vast maandbudget; is het op, dan neemt een mens het over.</span></li>
+          <li><strong>Eerlijke cijfers</strong><span>AI-antwoorden verschillen per keer. Daarom tellen we hoe vaak je genoemd wordt (“9 van 36”), in plaats van één opgeklopte score.</span></li>
+          <li><strong>Een rapport zonder AI</strong><span>We meten met AI, maar het rapport komt uit de metingen. Dezelfde gegevens geven hetzelfde rapport.</span></li>
+          <li><strong>Jouw besparing, niet onze prijs</strong><span>In het Tijdwinstrapport staat wat jij bespaart. De prijs van een project bespreken we apart.</span></li>
+          <li><strong>Jij beslist</strong><span>We laten zien wat kan en wat het oplevert. Wat er gebeurt, kies jij.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="over-ons">
+      <div class="container">
+        <div class="section__head">
+          <h2>Over EasyBY</h2>
+          <p class="lead">EasyBY V.O.F. bestaat uit twee vennoten. We zoeken uit waar ondernemers tijd en klanten laten liggen, en lossen dat op.</p>
+        </div>
+        <ul class="about">
+          <li><strong>Twee vennoten</strong><span>Een klein team: je spreekt direct met de mensen die het werk doen.</span></li>
+          <li><strong>Online, door heel Nederland</strong><span>We zijn niet aan een regio gebonden en doen zoveel mogelijk online.</span></li>
+          <li><strong>EasyBY V.O.F.</strong><span>Ingeschreven bij de KvK onder nummer 96182245.</span></li>
         </ul>
       </div>
     </section>
@@ -123,30 +254,61 @@
         </div>
         <div class="faq">
           <details>
-            <summary>Moet ik iets installeren?</summary>
-            <p>Nee. Je logt in op je eigen omgeving via de browser en koppelt daar je postbus en winkel.</p>
+            <summary>Wat is het verschil tussen Tijdwinst en de AI-scan?</summary>
+            <p>Tijdwinst gaat over binnen: werk dat je tijd kost, en hoe je dat automatiseert. De AI-scan gaat over buiten: of klanten je winkel vinden als ze een vraag stellen aan ChatGPT, Gemini of Google.</p>
           </details>
           <details>
-            <summary>Wat als het systeem het antwoord niet weet?</summary>
-            <p>Dan legt het de mail aan jou voor. Het verzint niets en vraagt zo nodig om een ordernummer.</p>
+            <summary>Wat kost de AI-scan?</summary>
+            <p>De mini-scan is gratis. De AI-scan met rapport en gesprek kost € 395 excl. btw, vooraf betaald. Wil je daarna de kansen laten uitvoeren, dan krijg je een offerte op maat.</p>
           </details>
           <details>
-            <summary>Merkt mijn klant dat er automatisering achter zit?</summary>
-            <p>Antwoorden gaan uit vanaf je eigen adres, in jouw toon en ondertekend met je team.</p>
+            <summary>Wat kost een automatisering?</summary>
+            <p>Dat hangt af van wat er gebouwd moet worden, dus dat is maatwerk. In het Tijdwinstrapport zie je eerst wat het je oplevert, in uren en euro's per jaar.</p>
           </details>
           <details>
-            <summary>Waar staan mijn gegevens?</summary>
-            <p>Op een eigen, afgeschermde omgeving per winkel, versleuteld, op een server in de EU.</p>
+            <summary>Moeten jullie langskomen?</summary>
+            <p>Nee. We werken zoveel mogelijk online en zijn niet aan een regio gebonden. Het gesprek over de AI-scan is ook online.</p>
+          </details>
+          <details>
+            <summary>Maken jullie het rapport met AI?</summary>
+            <p>Nee. We meten met AI-assistenten, maar het rapport zelf wordt opgebouwd uit de metingen en onze eigen bevindingen. Dezelfde gegevens geven altijd hetzelfde rapport.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="band">
+    <section class="section" id="mini-scan">
       <div class="container">
-        <div class="band__in">
-          <h2>Al klant? Ga naar je bord.</h2>
-          <a class="btn btn--ink" href="inloggen.html">Inloggen</a>
+        <div class="request">
+          <div class="request__text">
+            <span class="label label--green">Gratis · zonder verplichting</span>
+            <h2>Vraag een gratis mini-scan aan</h2>
+            <p>We stellen 3 vragen over jouw soort winkel aan ChatGPT en Gemini. Je krijgt een scorebord van wie AI noemt en een feitencheck van wat AI over jou vertelt. Gewoon als mail, zonder bijlage.</p>
+          </div>
+          <form id="mini-scan-form">
+            <div class="field">
+              <label for="ms-naam">Je naam</label>
+              <div class="input"><input id="ms-naam" name="naam" autocomplete="name" required></div>
+            </div>
+            <div class="field">
+              <label for="ms-email">E-mailadres</label>
+              <div class="input"><input id="ms-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="field">
+              <label for="ms-winkel">Naam van je winkel</label>
+              <div class="input"><input id="ms-winkel" name="winkel" autocomplete="organization" required></div>
+            </div>
+            <div class="field">
+              <label for="ms-plaats">Plaats</label>
+              <div class="input"><input id="ms-plaats" name="plaats" autocomplete="address-level2" required></div>
+            </div>
+            <div class="field field--wide">
+              <label for="ms-website">Website <span class="form-note">(als je die hebt)</span></label>
+              <div class="input"><input id="ms-website" name="website" type="url" inputmode="url" placeholder="https://"></div>
+            </div>
+            <button class="btn btn--ink" type="submit">Mini-scan aanvragen</button>
+            <p class="form-note">Je mailprogramma opent met je aanvraag erin.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -154,17 +316,27 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__grid">
+      <div class="footer__grid footer__grid--4">
         <div>
           <a class="wordmark" href="index.html" aria-label="EasyBY, naar de voorpagina">Easy<span>BY</span></a>
           <p>Minder regelen. Meer ondernemen.</p>
+          <!-- MOCK: contactgegevens zijn voorbeeldwaarden -->
+          <p class="footer__contact"><a href="mailto:hallo@easy-by.nl">hallo@easy-by.nl</a><br><a href="tel:+31600000000">06 00 00 00 00</a></p>
         </div>
         <div>
-          <h2>Product</h2>
+          <h2>Diensten</h2>
           <ul>
-            <li><a href="#wat-we-doen">Wat we doen</a></li>
-            <li><a href="#klantenservice">Klantenservice</a></li>
-            <li><a href="#vragen">Vragen</a></li>
+            <li><a href="tijdwinst.html">Tijdwinst</a></li>
+            <li><a href="ai-scan.html">AI-scan</a></li>
+            <li><a href="klantenservice.html">Klantenservice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>EasyBY</h2>
+          <ul>
+            <li><a href="voorbeeldrapport.html">Voorbeeldrapport</a></li>
+            <li><a href="index.html#over-ons">Over ons</a></li>
+            <li><a href="index.html#mini-scan">Gratis mini-scan</a></li>
           </ul>
         </div>
         <div>
@@ -174,8 +346,28 @@
           </ul>
         </div>
       </div>
-      <p class="footer__base">EasyBY, 2026</p>
+      <p class="footer__base">EasyBY V.O.F. · KvK 96182245 · We werken online, door heel Nederland</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var form = document.getElementById('mini-scan-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        var d = new FormData(form);
+        var regels = [
+          'Naam: ' + d.get('naam'),
+          'Winkel: ' + d.get('winkel'),
+          'Plaats: ' + d.get('plaats'),
+          'Website: ' + (d.get('website') || '-'),
+          'E-mail: ' + d.get('email')
+        ];
+        window.location.href = 'mailto:hallo@easy-by.nl?subject=' + encodeURIComponent('Aanvraag gratis mini-scan: ' + d.get('winkel')) +
+          '&body=' + encodeURIComponent(regels.join('\n'));
+      });
+    })();
+  </script>
 </body>
 </html>
