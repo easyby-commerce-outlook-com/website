@@ -34,7 +34,7 @@
   }
 
   function terug(el) {
-    el.querySelectorAll('.r-figure').forEach(function (f) {
+    el.querySelectorAll('.r-figure, .stat__getal').forEach(function (f) {
       f._beurt = (f._beurt || 0) + 1;
       if (f.dataset.eind !== undefined && f.firstChild) f.firstChild.nodeValue = f.dataset.eind;
     });
@@ -47,6 +47,7 @@
         if (el.classList.contains('is-in')) return;
         el.classList.add('is-in');
         if (el.classList.contains('r-sheet')) el.querySelectorAll('.r-figure').forEach(telOp);
+        if (el.classList.contains('stat')) el.querySelectorAll('.stat__getal').forEach(telOp);
       } else if (!item.isIntersecting) {
         // Helemaal uit beeld: terug naar de beginstand, zodat het opnieuw speelt.
         el.classList.remove('is-in');
@@ -56,4 +57,79 @@
   }, { threshold: [0, 0.15] });
 
   document.querySelectorAll('.r-sheet, .reveal, .streepjes, .timeline').forEach(function (el) { io.observe(el); });
+
+  // Een dia die opnieuw zichtbaar wordt, speelt zijn animatie opnieuw af.
+  window.easybySpeelOpnieuw = function (dia) {
+    dia.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.remove('is-in');
+      terug(el);
+      void el.offsetWidth;
+      el.classList.add('is-in');
+      el.querySelectorAll('.stat__getal').forEach(telOp);
+    });
+  };
+})();
+
+/* Carrousel "Wist je dat?": wisselt automatisch van dia, pauzeert bij muis of
+ * toetsenbordfocus en met de pauzeknop. Bij een voorkeur voor minder beweging
+ * loopt hij niet vanzelf; de streepjes werken altijd. */
+(function () {
+  document.querySelectorAll('.carrousel').forEach(function (c) {
+    var dias = c.querySelectorAll('.carrousel__dia');
+    var stippen = c.querySelectorAll('.carrousel__stip');
+    var knop = c.querySelector('.carrousel__pauze');
+    if (dias.length < 2) return;
+    var interval = parseInt(c.dataset.interval, 10) || 8000;
+    var rustig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var huidig = 0, timer = null, gepauzeerd = rustig, zweeft = false;
+    c.style.setProperty('--carrousel-interval', interval + 'ms');
+    c.classList.add('carrousel--actief');
+
+    function toon(i) {
+      huidig = (i + dias.length) % dias.length;
+      dias.forEach(function (d, n) {
+        var aan = n === huidig;
+        d.classList.toggle('is-actief', aan);
+        d.setAttribute('aria-hidden', aan ? 'false' : 'true');
+        d.inert = !aan;
+      });
+      stippen.forEach(function (s, n) {
+        s.classList.toggle('is-actief', n === huidig);
+        if (n === huidig) s.setAttribute('aria-current', 'true'); else s.removeAttribute('aria-current');
+      });
+      if (window.easybySpeelOpnieuw) window.easybySpeelOpnieuw(dias[huidig]);
+      plan();
+    }
+    function plan() {
+      clearTimeout(timer);
+      var loopt = !gepauzeerd && !zweeft;
+      c.classList.toggle('carrousel--loopt', !rustig && !gepauzeerd);
+      c.classList.toggle('carrousel--gepauzeerd', gepauzeerd || zweeft);
+      if (loopt) {
+        // Timer en voortgangsbalk beginnen samen opnieuw.
+        var balk = stippen[huidig].querySelector('span');
+        balk.style.animation = 'none'; void balk.offsetWidth; balk.style.animation = '';
+        timer = setTimeout(function () { toon(huidig + 1); }, interval);
+      }
+    }
+    stippen.forEach(function (s, n) { s.addEventListener('click', function () { toon(n); }); });
+    knop.addEventListener('click', function () {
+      gepauzeerd = !gepauzeerd;
+      knop.setAttribute('aria-label', gepauzeerd ? 'Speel de carrousel af' : 'Pauzeer de carrousel');
+      plan();
+    });
+    // Bij muis of focus pauzeren; de voortgangsbalk blijft dan staan.
+    c.addEventListener('mouseenter', function () { zweeft = true; plan(); });
+    c.addEventListener('mouseleave', function () { zweeft = false; plan(); });
+    c.addEventListener('focusin', function () { zweeft = true; plan(); });
+    c.addEventListener('focusout', function (e) { if (!c.contains(e.relatedTarget)) { zweeft = false; plan(); } });
+    // Niet doorlopen als de carrousel niet in beeld is.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (items) {
+        items.forEach(function (it) { zweeft = !it.isIntersecting ? true : (c.matches(':hover') || c.contains(document.activeElement)); plan(); });
+      }, { threshold: 0.3 }).observe(c);
+    }
+    if (rustig) knop.setAttribute('aria-label', 'Speel de carrousel af');
+    toon(0);
+  });
 })();
