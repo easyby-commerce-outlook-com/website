@@ -38,5 +38,5 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.r-sheet, .reveal, .streepjes').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.r-sheet, .reveal, .streepjes, .timeline').forEach(function (el) { io.observe(el); });
 })();

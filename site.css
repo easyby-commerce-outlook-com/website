@@ -427,3 +427,43 @@
   .offer { row-gap: var(--space-md); }
   .offer > li { grid-row: auto; grid-template-rows: none; }
 }
+
+/* Mini-scan: knop met toelichting ernaast */
+.form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
+.form-actions .form-note { margin: 0; }
+
+/* Mini-scan: tijdlijn in drie stappen */
+.timeline { list-style: none; margin: var(--space-2xl) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.timeline li { position: relative; display: grid; gap: var(--space-xs); align-content: start; justify-items: start; padding-right: var(--space-xl); }
+.timeline h3 { font-size: var(--text-xl); }
+.timeline p { color: var(--color-ink-2); }
+.timeline .chip { margin-top: var(--space-2xs); border-color: var(--color-green); color: var(--color-green-dark); background: var(--color-green-tint); }
+.timeline .btn { margin-top: var(--space-xs); }
+.timeline__dot { position: relative; z-index: 1; display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: var(--space-sm); border: 2px solid var(--color-green); border-radius: 50%; background: var(--color-green); color: var(--color-on-dark); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; box-shadow: 0 0 0 6px var(--color-green-tint); }
+/* Verbindingslijn naar de volgende stap: grijze baan met groene vulling */
+.timeline li:not(:last-child)::before, .timeline li:not(:last-child)::after { content: ""; position: absolute; top: 19px; left: 56px; right: var(--space-md); height: 2px; }
+.timeline li:not(:last-child)::before { background: var(--color-rule); }
+.timeline li:not(:last-child)::after { background: var(--color-green); transform-origin: left center; }
+@media (max-width: 40rem) {
+  .timeline { grid-template-columns: minmax(0, 1fr); margin-top: var(--space-xl); }
+  .timeline li { padding: 0 0 var(--space-xl) 60px; }
+  .timeline__dot { position: absolute; left: 0; top: 0; margin: 0; }
+  .timeline li:not(:last-child)::before, .timeline li:not(:last-child)::after { top: 52px; bottom: 8px; left: 19px; right: auto; width: 2px; height: auto; }
+  .timeline li:not(:last-child)::after { transform-origin: center top; }
+}
+
+/* Beweging: de lijn loopt vol, elke stap licht op als de lijn hem bereikt */
+.beweeg .timeline__dot { background: var(--color-paper); border-color: var(--color-rule-2); color: var(--color-muted); box-shadow: 0 0 0 0 var(--color-green-tint); transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), box-shadow var(--dur-long) var(--ease-out); }
+.beweeg .timeline li > :not(.timeline__dot) { opacity: 0.35; translate: 0 8px; transition: opacity var(--dur-long) var(--ease-out), translate var(--dur-long) var(--ease-out); }
+.beweeg .timeline li:not(:last-child)::after { transform: scaleX(0); transition: transform var(--timeline-fill) var(--ease-in-out); }
+.beweeg .timeline.is-in .timeline__dot { background: var(--color-green); border-color: var(--color-green); color: var(--color-on-dark); box-shadow: 0 0 0 6px var(--color-green-tint); }
+.beweeg .timeline.is-in li > :not(.timeline__dot) { opacity: 1; translate: 0 0; }
+.beweeg .timeline.is-in li:not(:last-child)::after { transform: scaleX(1); }
+.beweeg .timeline li:nth-child(2) .timeline__dot, .beweeg .timeline li:nth-child(2) > :not(.timeline__dot) { transition-delay: var(--timeline-step); }
+.beweeg .timeline li:nth-child(3) .timeline__dot, .beweeg .timeline li:nth-child(3) > :not(.timeline__dot) { transition-delay: calc(var(--timeline-step) * 2); }
+.beweeg .timeline li:nth-child(1)::after { transition-delay: 150ms; }
+.beweeg .timeline li:nth-child(2)::after { transition-delay: calc(var(--timeline-step) + 150ms); }
+@media (max-width: 40rem) {
+  .beweeg .timeline li:not(:last-child)::after { transform: scaleY(0); }
+  .beweeg .timeline.is-in li:not(:last-child)::after { transform: scaleY(1); }
+}

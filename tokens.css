@@ -58,4 +58,5 @@
   --shadow-lg: 0 2px 4px rgb(31 41 55 / 0.05), 0 28px 56px -20px rgb(31 41 55 / 0.32);
   --lift: -3px;
   --tilt-a: -2deg; --tilt-b: 1.5deg;
+  --timeline-step: 650ms; --timeline-fill: 500ms;
 }
