@@ -12,7 +12,7 @@ Statische HTML en CSS, zonder build-stap of server-code.
 | `tijdwinst.html` | Dienst Tijdwinst (automatisering): werkwijze in vier stappen, wat in het Tijdwinstrapport staat |
 | `ai-scan.html` | Dienst AI-scan (AI-vindbaarheid): wat we meten, werkwijze in vijf stappen, prijzen |
 | `klantenservice.html` | De klantenservice-automatisering, als voorbeeld van Tijdwinst |
-| `voorbeeldrapport.html` | Voorblad en samenvatting van een AI-scanrapport en een Tijdwinstrapport, met verzonnen gegevens |
+| `voorbeeldrapport.html` | Voorblad en samenvatting van een AI-scanrapport en een Tijdwinstrapport, gevuld met voorbeelddata |
 | `inloggen.html` | Naam van de winkel invullen, door naar het bord. Het inloggen zelf gebeurt op het bord |
 | `tokens.css` | De EasyBY-huisstijl (kleuren, lettertype, vormen). Pas de huisstijl alleen hier aan |
 | `site.js` | Beweging: rapportbladen komen op, cijfers tellen op, balken, streepjes en de tijdlijn lopen vol, telkens opnieuw als ze in beeld komen. Niets bij voorkeur voor minder beweging |
@@ -25,4 +25,4 @@ Bekijken: open `index.html` in de browser.
 
 - Contactgegevens: `hallo@easy-by.nl` en `06 00 00 00 00` zijn voorbeeldwaarden (zoek op `MOCK`).
 - Het mini-scanformulier opent het mailprogramma van de bezoeker (mailto); er is geen externe formulierdienst.
-- De namen en cijfers in de rapportvoorbeelden zijn verzonnen.
+- De namen en cijfers in de rapportvoorbeelden zijn voorbeelddata.
