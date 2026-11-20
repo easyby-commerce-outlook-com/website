@@ -14,6 +14,7 @@ Statische HTML en CSS, zonder build-stap of server-code.
 | `klantenservice.html` | De klantenservice-automatisering, als voorbeeld van Tijdwinst |
 | `voorbeeldrapport.html` | Voorblad en samenvatting van een AI-scanrapport en een Tijdwinstrapport, gevuld met voorbeelddata |
 | `inloggen.html` | Naam van de winkel invullen, door naar het bord. Het inloggen zelf gebeurt op het bord |
+| `archief/` | Weggehaalde blokken om later terug te zetten (geen pagina's van de site). Nu: `waarom-nu.html` |
 | `tokens.css` | De EasyBY-huisstijl (kleuren, lettertype, vormen). Pas de huisstijl alleen hier aan |
 | `site.js` | Carrousel "Wist je dat?" (wisselt automatisch, pauzeert bij muis, focus of pauzeknop). Beweging: rapportbladen komen op, cijfers tellen op, balken, streepjes en de tijdlijn lopen vol, telkens opnieuw als ze in beeld komen. Niets bij voorkeur voor minder beweging |
 | `base.css`, `site.css` | Basisregels en de opmaak van de pagina's. De rapportonderdelen (`.r-…`) volgen de pdf-huisstijl uit tool-notion-automatisering |
