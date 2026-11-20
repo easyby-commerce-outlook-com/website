@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gratis mini-scan · EasyBY</title>
+  <meta name="description" content="Vraag een gratis mini-scan aan: zie of AI jouw winkel noemt en of klopt wat het vertelt.">
+  <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__in">
+      <a class="wordmark" href="index.html" aria-label="EasyBY, naar de voorpagina">Easy<span>BY</span></a>
+      <nav class="nav__links" aria-label="Hoofdmenu">
+        <a href="tijdwinst.html">Tijdwinst</a>
+        <a href="ai-scan.html">AI-scan</a>
+        <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
+        <a href="over-ons.html">Over ons</a>
+      </nav>
+      <a class="nav__login" href="inloggen.html">Inloggen</a>
+      <a class="btn btn--ink btn--sm" href="mini-scan.html">Gratis mini-scan</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="container">
+        <span class="label label--green eyebrow">Gratis mini-scan</span>
+        <h1>Wat zegt AI over jouw winkel?</h1>
+        <p class="lead">Vraag een gratis mini-scan aan. Je ziet of AI jouw winkel noemt, en of klopt wat het vertelt.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="request">
+          <div class="request__text">
+            <span class="label label--green">Gratis · zonder verplichting</span>
+            <h2>Jouw gegevens</h2>
+            <p>Een eerste blik: noemt AI jouw winkel, en klopt wat het vertelt? Je krijgt het per mail.</p>
+          </div>
+          <form id="mini-scan-form">
+            <div class="field">
+              <label for="ms-naam">Je naam</label>
+              <div class="input"><input id="ms-naam" name="naam" autocomplete="name" required></div>
+            </div>
+            <div class="field">
+              <label for="ms-email">E-mailadres</label>
+              <div class="input"><input id="ms-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="field">
+              <label for="ms-winkel">Naam van je winkel</label>
+              <div class="input"><input id="ms-winkel" name="winkel" autocomplete="organization" required></div>
+            </div>
+            <div class="field">
+              <label for="ms-plaats">Plaats</label>
+              <div class="input"><input id="ms-plaats" name="plaats" autocomplete="address-level2" required></div>
+            </div>
+            <div class="field field--wide">
+              <label for="ms-website">Website <span class="form-note">(als je die hebt)</span></label>
+              <div class="input"><input id="ms-website" name="website" type="url" inputmode="url" placeholder="https://"></div>
+            </div>
+            <button class="btn btn--ink" type="submit">Mini-scan aanvragen</button>
+            <p class="form-note">Je mailprogramma opent met je aanvraag erin.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <ul class="about">
+          <li><strong>Gratis</strong><span>Zonder verplichting en zonder kleine lettertjes.</span></li>
+          <li><strong>Per mail</strong><span>Je krijgt de uitkomst in een korte mail.</span></li>
+          <li><strong>Daarna</strong><span>Wil je het volledige beeld? Dan is er de <a href="ai-scan.html">AI-scan</a>.</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--4">
+        <div>
+          <a class="wordmark" href="index.html" aria-label="EasyBY, naar de voorpagina">Easy<span>BY</span></a>
+          <p>Minder regelen. Meer ondernemen.</p>
+          <!-- MOCK: contactgegevens zijn voorbeeldwaarden -->
+          <p class="footer__contact"><a href="mailto:hallo@easy-by.nl">hallo@easy-by.nl</a><br><a href="tel:+31600000000">06 00 00 00 00</a></p>
+        </div>
+        <div>
+          <h2>Diensten</h2>
+          <ul>
+            <li><a href="tijdwinst.html">Tijdwinst</a></li>
+            <li><a href="ai-scan.html">AI-scan</a></li>
+            <li><a href="klantenservice.html">Klantenservice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>EasyBY</h2>
+          <ul>
+            <li><a href="voorbeeldrapport.html">Voorbeeldrapport</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="over-ons.html#contact">Contact</a></li>
+            <li><a href="mini-scan.html">Gratis mini-scan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Klanten</h2>
+          <ul>
+            <li><a href="inloggen.html">Inloggen</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__base">EasyBY V.O.F. · KvK 96182245 · We werken online, door heel Nederland</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var form = document.getElementById('mini-scan-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        var d = new FormData(form);
+        var regels = [
+          'Naam: ' + d.get('naam'),
+          'Winkel: ' + d.get('winkel'),
+          'Plaats: ' + d.get('plaats'),
+          'Website: ' + (d.get('website') || '-'),
+          'E-mail: ' + d.get('email')
+        ];
+        window.location.href = 'mailto:hallo@easy-by.nl?subject=' + encodeURIComponent('Aanvraag gratis mini-scan: ' + d.get('winkel')) +
+          '&body=' + encodeURIComponent(regels.join('\n'));
+      });
+    })();
+  </script>
+</body>
+</html>
