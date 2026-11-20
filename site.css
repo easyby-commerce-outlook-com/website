@@ -364,3 +364,55 @@
 .contact dt { color: var(--color-muted); }
 .contact dd { margin: 0; font-weight: var(--weight-semibold); }
 @media (max-width: 40rem) { .contact { padding: var(--space-lg); } }
+
+/* ------------------------------------------------------------------------
+ * Diepte en beweging
+ * --------------------------------------------------------------------- */
+
+/* 2. Laagjes: schaduw op rapportbladen en kaarten, optillen bij hover */
+.r-sheet { box-shadow: var(--shadow-md); }
+.preview .r-sheet--b { box-shadow: var(--shadow-lg); }
+.service, .offer > li, .step, .contact { box-shadow: var(--shadow-sm); transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
+.service:hover, .offer > li:hover, .step:hover { transform: translateY(var(--lift)); box-shadow: var(--shadow-md); }
+.btn--ink { box-shadow: var(--shadow-sm); }
+
+/* Rapporten op het bureau: licht gedraaid op brede schermen */
+@media (min-width: 40.01rem) {
+  .preview:not(.preview--single) .r-sheet--a { transform: rotate(var(--tilt-a)); }
+  .preview:not(.preview--single) .r-sheet--b { transform: rotate(var(--tilt-b)); }
+}
+
+/* 3. Afwisseling in vlakken */
+.section--kalk { background: var(--color-surface); }
+.section--kalk, .section--kalk + .section, .board, .board + .section, .section + .board { border-top: 0; }
+.section--kalk .tile { background: var(--color-paper); }
+.service--dark { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-on-dark); }
+.service--dark p, .service--dark .service__facts dt { color: var(--color-on-dark-soft); }
+.service--dark .label { color: var(--color-green-on-dark); }
+.service--dark .icon { border-color: var(--color-line-on-dark); color: var(--color-green-on-dark); }
+.service--dark .service__facts { border-top-color: var(--color-line-on-dark); }
+.service--dark .flow li + li::before { color: var(--color-green-on-dark); }
+.service--dark .btn--ink { background: var(--color-paper); color: var(--color-ink); }
+.service--dark .btn--ink:hover { background: var(--color-green-tint); }
+.service--accent { border-color: var(--color-green); border-width: var(--line-strong); }
+
+/* 4. De vier streepjes als kopmotief */
+.streepjes--kop { width: 96px; max-width: none; gap: var(--space-2xs); margin-bottom: var(--space-md); grid-column: 1 / -1; }
+.streepjes--kop i { height: var(--space-2xs); }
+.streepjes i:nth-child(4) { transform-origin: left center; }
+.board .streepjes i:nth-child(-n+3) { background: var(--color-line-on-dark); }
+
+/* 1. Beweging: alleen met JavaScript en zonder voorkeur voor minder beweging */
+@keyframes opkomen { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
+.beweeg .r-sheet, .beweeg .reveal { opacity: 0; }
+.beweeg .r-sheet.is-in, .beweeg .reveal.is-in { animation: opkomen var(--dur-long) var(--ease-out) both; }
+.beweeg .preview .r-sheet--b.is-in { animation-delay: 180ms; }
+.beweeg .r-bar__fill { transform: scaleX(0); transform-origin: left center; transition: transform 900ms var(--ease-out) 250ms; }
+.beweeg .is-in .r-bar__fill { transform: scaleX(1); }
+.beweeg .streepjes i:nth-child(4) { transform: scaleX(0); transition: transform 700ms var(--ease-out) 150ms; }
+.beweeg .streepjes.is-in i:nth-child(4) { transform: scaleX(1); }
+.beweeg .steps .step.reveal.is-in:nth-child(2) { animation-delay: 80ms; }
+.beweeg .steps .step.reveal.is-in:nth-child(3) { animation-delay: 160ms; }
+.beweeg .steps .step.reveal.is-in:nth-child(4) { animation-delay: 240ms; }
+.beweeg .steps .step.reveal.is-in:nth-child(5) { animation-delay: 320ms; }
+.section--kalk + .band { padding-top: var(--section-gap-s); }
