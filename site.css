@@ -504,3 +504,45 @@
 .r-teaser__body p { color: var(--color-ink-2); }
 .r-teaser__body .btn { margin-top: var(--space-xs); }
 .actions--tight { margin-top: 0; }
+
+/* Nette regelafbreking: geen woord alleen op de laatste regel, geen afbreking bij een koppelteken */
+body { text-wrap: pretty; }
+.nobr { white-space: nowrap; }
+.hero h1 { max-width: 16ch; }
+@media (max-width: 72rem) {
+  .run__intro h2, .split__text h2 { font-size: var(--text-2xl); }
+}
+
+/* Wist je dat: AI-overzicht in Google, met een illustratie van een zoekpagina */
+.split--wistje { align-items: center; }
+.split--wistje .split__text .label { margin-bottom: calc(var(--space-xs) * -1); }
+.serp { margin: 0; display: grid; gap: var(--space-md); padding: var(--space-lg); background: var(--color-surface); border: var(--line-hair) solid var(--color-rule); border-radius: var(--radius-tile); box-shadow: var(--shadow-md); }
+.serp__bar { display: flex; align-items: center; gap: var(--space-sm); min-height: 48px; padding: 0 var(--space-md); background: var(--color-paper); border: var(--line-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); color: var(--color-ink); font-size: var(--text-sm); }
+.serp__bar svg { width: 18px; height: 18px; color: var(--color-muted); flex: none; }
+.serp__ai { padding: var(--space-md) var(--space-lg); background: var(--color-paper); border: var(--line-strong) solid var(--color-green); border-radius: var(--radius-tile); font-size: var(--text-sm); box-shadow: var(--shadow-sm); }
+.serp__ai-kop { display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-xs); font-weight: var(--weight-semibold); color: var(--color-green-dark); }
+.serp__ai-kop svg { width: 18px; height: 18px; flex: none; }
+.serp__ai p { color: var(--color-ink-2); }
+.serp__ai ul { margin: var(--space-xs) 0 0; padding-left: var(--space-lg); display: grid; gap: var(--space-2xs); }
+.serp__ai li::marker { color: var(--color-green); }
+.serp__jij { color: var(--color-muted); }
+.serp__jij b { display: inline-block; padding: 0 var(--space-xs); border: var(--line-hair) dashed var(--color-faint); border-radius: var(--radius-chip); font-weight: var(--weight-semibold); }
+.serp__results { display: grid; gap: var(--space-sm); opacity: 0.55; }
+.serp__result { display: grid; gap: var(--space-2xs); padding: var(--space-sm) var(--space-md); background: var(--color-paper); border-radius: var(--radius-tile); }
+.serp__result i { display: block; height: 8px; border-radius: var(--radius-chip); background: var(--color-track); }
+.serp__result i:nth-child(1) { width: 45%; height: 10px; background: var(--color-rule-2); }
+.serp__result i:nth-child(2) { width: 90%; }
+.serp__result i:nth-child(3) { width: 70%; }
+.serp figcaption { font-size: var(--text-xs); color: var(--color-muted); }
+
+/* Beweging: het AI-overzicht schuift erin en duwt de zoekresultaten omlaag */
+@keyframes serp-ai { from { opacity: 0; transform: scaleY(0.6); } to { opacity: 1; transform: none; } }
+@keyframes serp-duw { from { translate: 0 -56px; } to { translate: 0 0; } }
+@keyframes serp-jij { 0%, 100% { border-color: var(--color-faint); } 50% { border-color: var(--color-green); } }
+.beweeg .serp.reveal { opacity: 1; }
+.beweeg .serp.reveal.is-in { animation: none; }
+.beweeg .serp.is-in .serp__ai { transform-origin: top center; animation: serp-ai var(--dur-long) var(--ease-out) 300ms both; }
+.beweeg .serp.is-in .serp__results { animation: serp-duw var(--dur-long) var(--ease-out) 300ms both; }
+.beweeg .serp.is-in .serp__jij b { animation: serp-jij 1.6s var(--ease-in-out) 900ms 2; }
+.beweeg .serp:not(.is-in) .serp__ai { opacity: 0; }
+.hero h1.breed { max-width: 22ch; }
