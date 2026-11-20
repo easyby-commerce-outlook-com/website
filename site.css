@@ -360,3 +360,7 @@
 .preview.preview--single .r-sheet, .preview.preview--single figcaption { position: relative; inset: auto; top: auto; width: 100%; max-width: 520px; }
 .hero h1.belofte { font-size: clamp(2.25rem, 3.2vw + 1rem, 4.5rem); }
 .belofte span { white-space: nowrap; }
+.contact { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-sm) var(--space-lg); margin: 0; padding: var(--space-xl); }
+.contact dt { color: var(--color-muted); }
+.contact dd { margin: 0; font-weight: var(--weight-semibold); }
+@media (max-width: 40rem) { .contact { padding: var(--space-lg); } }
