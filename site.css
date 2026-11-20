@@ -477,3 +477,14 @@
   .timeline li { grid-row: span 4; grid-template-rows: subgrid; }
   .timeline__tag, .timeline .btn { align-self: end; }
 }
+/* Waarom nu: drie punten op antraciet, met een knop */
+.never--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.board__cta { margin-top: var(--space-xl); }
+.btn--light { background: var(--color-paper); color: var(--color-ink); box-shadow: var(--shadow-sm); }
+.btn--light:hover { background: var(--color-green-tint); }
+@media (max-width: 60rem) { .never--3 { grid-template-columns: minmax(0, 1fr); } }
+
+/* Terug naar de beginstand gebeurt uit beeld en direct, zonder overgang */
+.beweeg .r-sheet:not(.is-in) .r-bar__fill, .beweeg .streepjes:not(.is-in) i:nth-child(4), .beweeg .timeline:not(.is-in) li::after, .beweeg .timeline:not(.is-in) .timeline__dot, .beweeg .timeline:not(.is-in) li > * { transition: none; }
+.board .lead a { color: inherit; text-decoration-color: var(--color-green-on-dark); }
+.board .lead strong { color: var(--color-on-dark); font-weight: var(--weight-semibold); }
