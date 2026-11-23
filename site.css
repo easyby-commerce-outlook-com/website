@@ -833,3 +833,14 @@ body { text-wrap: pretty; }
 @media (max-width: 40rem) { .preview--foto .r-sheet { width: 88%; margin-top: -48px; } .preview--foto .r-figure { font-size: var(--text-lg); } }
 .preview--foto { display: block; }
 @media (max-width: 72rem) { .preview--foto .r-tile .label { letter-spacing: 0; } }
+
+/* Over ons: brede foto die half over het groene verhaalvlak valt */
+.fotostrook { position: relative; margin-top: calc(var(--space-3xl) * -1); }
+.fotostrook img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: 35% 45%; border-radius: var(--radius-tile); box-shadow: var(--shadow-lg); filter: saturate(0.85) contrast(0.98); }
+.verhaal:has(+ .fotostrook) { padding-bottom: calc(var(--section-gap-s) + var(--space-3xl)); }
+.section--na-foto { border-top: 0; }
+@media (max-width: 40rem) {
+  .fotostrook { margin-top: calc(var(--space-2xl) * -1); }
+  .fotostrook img { aspect-ratio: 4 / 3; object-position: 30% 50%; }
+  .verhaal:has(+ .fotostrook) { padding-bottom: calc(var(--section-gap-s) + var(--space-2xl)); }
+}
