@@ -652,3 +652,15 @@ body { text-wrap: pretty; }
   .carrousel--actief .carrousel__baan { position: relative; }
   .carrousel--actief .carrousel__dia:not(.is-actief) { position: absolute; inset: 0 0 auto 0; }
 }
+
+/* Carrousel op antraciet voor meer contrast */
+.wistje.board .split__text p { color: var(--color-on-dark-soft); }
+.wistje.board .split__text strong { color: var(--color-on-dark); }
+.wistje.board .label--green { color: var(--color-green-on-dark); }
+.wistje.board .split__text a:not(.btn) { color: inherit; text-decoration-color: var(--color-green-on-dark); }
+.wistje.board .carrousel__stip span { background: var(--color-line-on-dark); }
+.wistje.board .carrousel__stip span::after { background: var(--color-green-on-dark); }
+.wistje.board .carrousel__pauze { background: transparent; border-color: var(--color-line-on-dark); color: var(--color-on-dark); }
+.wistje.board .carrousel__pauze:hover { border-color: var(--color-on-dark); }
+.wistje.board :focus-visible { outline-color: var(--color-green-on-dark); }
+.wistje.board .stat, .wistje.board .serp { border-color: var(--color-line-on-dark); box-shadow: var(--shadow-lg); }
