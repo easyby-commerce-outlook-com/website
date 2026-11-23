@@ -664,3 +664,107 @@ body { text-wrap: pretty; }
 .wistje.board .carrousel__pauze:hover { border-color: var(--color-on-dark); }
 .wistje.board :focus-visible { outline-color: var(--color-green-on-dark); }
 .wistje.board .stat, .wistje.board .serp { border-color: var(--color-line-on-dark); box-shadow: var(--shadow-lg); }
+
+/* ------------------------------------------------------------------------
+ * Mobiel compacter: menu, eerste scherm, minder blokken, vaste knop
+ * --------------------------------------------------------------------- */
+
+/* 1. Menu op smalle schermen */
+.menu { display: none; position: static; }
+.menu__knop { display: grid; place-items: center; width: 44px; height: 44px; margin-right: calc(var(--space-xs) * -1); border-radius: var(--radius-tile); cursor: pointer; list-style: none; }
+.menu__knop::-webkit-details-marker { display: none; }
+.menu__knop:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.menu__icoon { display: grid; gap: 5px; width: 22px; }
+.menu__icoon i { display: block; height: 2px; border-radius: 1px; background: var(--color-ink); transition: transform var(--dur-short) var(--ease-out), opacity var(--dur-short) var(--ease-out); }
+.menu[open] .menu__icoon i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu[open] .menu__icoon i:nth-child(2) { opacity: 0; }
+.menu[open] .menu__icoon i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu__paneel { position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: 0; padding: var(--space-xs) var(--gutter) var(--space-lg); background: var(--color-paper); border-bottom: var(--line-hair) solid var(--color-rule); box-shadow: var(--shadow-lg); }
+.menu__paneel a:not(.btn) { padding: var(--space-md) 0; border-bottom: var(--line-hair) solid var(--color-rule); font-size: var(--text-lg); font-weight: var(--weight-semibold); text-decoration: none; color: var(--color-ink); }
+.menu__paneel a[aria-current="page"] { color: var(--color-green-dark); }
+.menu__paneel .btn { margin-top: var(--space-lg); }
+.nav { position: sticky; }
+.nav__in { position: relative; }
+@media (max-width: 64rem) {
+  .menu { display: block; }
+  .nav__login { display: none; }
+  .nav__cta { margin-left: auto; }
+}
+@media (max-width: 22rem) { .nav__cta { display: none; } .menu { margin-left: auto; } }
+
+/* 2. Eerste scherm: wat we doen, en twee routes */
+.hero__wat { margin: 0 0 var(--space-md); font-size: var(--text-sm); font-weight: var(--weight-semibold); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-green-dark); }
+.hero .streepjes + .hero__wat { margin-top: calc(var(--space-xl) * -0.5); }
+.routes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); max-width: 560px; margin-top: var(--space-xl); }
+.route { position: relative; display: grid; gap: var(--space-2xs); align-content: start; min-height: 112px; padding: var(--space-md) var(--space-lg) var(--space-md); padding-right: var(--space-2xl); background: var(--color-paper); border: var(--line-strong) solid var(--color-green); border-radius: var(--radius-tile); color: var(--color-ink); text-decoration: none; box-shadow: var(--shadow-sm); transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+.route:hover { transform: translateY(var(--lift)); box-shadow: var(--shadow-md); }
+.route:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.route--donker { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-on-dark); }
+.route__label { font-size: var(--text-xs); font-weight: var(--weight-semibold); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-green-dark); }
+.route--donker .route__label { color: var(--color-green-on-dark); }
+.route__titel { font-size: var(--text-lg); font-weight: var(--weight-bold); line-height: 1.25; letter-spacing: var(--tracking-figure); }
+.route__pijl { position: absolute; right: var(--space-md); bottom: var(--space-md); font-size: var(--text-lg); color: var(--color-green); transition: translate var(--dur-short) var(--ease-out); }
+.route--donker .route__pijl { color: var(--color-green-on-dark); }
+.route:hover .route__pijl { translate: 4px 0; }
+.hero__of { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-ink-2); }
+.hero__of a { color: var(--color-ink); font-weight: var(--weight-semibold); text-decoration-color: var(--color-green); }
+@media (max-width: 40rem) {
+  .route { min-height: 96px; padding: var(--space-sm) var(--space-md); padding-right: var(--space-xl); }
+  .route__titel { font-size: var(--text-md); }
+  .route__pijl { right: var(--space-sm); bottom: var(--space-sm); }
+  /* Op mobiel één rapportkaart in het eerste scherm */
+  .preview:not(.preview--single) .r-sheet--b { display: none; }
+  .hero { padding-block: var(--space-xl) var(--space-2xl); }
+}
+
+/* 3. Onze diensten compacter op mobiel */
+@media (max-width: 40rem) {
+  .service { gap: var(--space-sm); }
+  .service .flow, .service .service__facts { display: none; }
+}
+
+/* 4. Wat het kost: veegkaarten op mobiel */
+@media (max-width: 40rem) {
+  .offer { display: flex; gap: var(--space-sm); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); margin-inline: calc(var(--gutter) * -1); padding: var(--space-2xs) var(--gutter) var(--space-md); scrollbar-width: none; }
+  .offer::-webkit-scrollbar { display: none; }
+  .offer > li { flex: 0 0 84%; scroll-snap-align: start; grid-row: auto; grid-template-rows: auto auto 1fr auto auto; }
+  .offer > li:hover { transform: none; }
+  .offer__hint { display: block; }
+}
+.offer__hint { display: none; margin-top: var(--space-xs); font-size: var(--text-xs); color: var(--color-muted); }
+
+/* 5. Minder blokken op mobiel */
+@media (max-width: 40rem) {
+  .verberg-mobiel { display: none !important; }
+  .never--kort li { display: grid; grid-template-columns: 1.25rem minmax(0, 1fr); gap: var(--space-xs); align-items: baseline; padding-block: var(--space-sm); }
+  .never--kort li::before { content: ""; width: 10px; height: 6px; border-left: 2px solid var(--color-green-on-dark); border-bottom: 2px solid var(--color-green-on-dark); transform: rotate(-45deg) translateY(-2px); }
+  .never--kort strong { margin: 0; font-size: var(--text-md); }
+  .never--kort span { display: none; }
+}
+
+/* 6. Vaste knop onderin op mobiel */
+.sticky-cta { display: none; }
+@media (max-width: 40rem) {
+  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: var(--z-sticky); display: block; padding: var(--space-sm) var(--gutter) calc(var(--space-sm) + env(safe-area-inset-bottom)); background: color-mix(in oklab, var(--color-paper) 92%, transparent); backdrop-filter: blur(8px); border-top: var(--line-hair) solid var(--color-rule); transition: translate var(--dur-short) var(--ease-out); }
+  .sticky-cta .btn { width: 100%; }
+  .heeft-sticky-cta body { padding-bottom: 76px; }
+  .heeft-sticky-cta .sticky-cta:not(.is-zichtbaar) { translate: 0 110%; }
+}
+
+/* 7. Footer compacter op mobiel */
+@media (max-width: 40rem) {
+  .footer { padding-block: var(--space-xl) var(--space-lg); }
+  .footer__grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg) var(--gap-columns); }
+  .footer__grid--4 > div:first-child { grid-column: 1 / -1; }
+  .footer__base { margin-top: var(--space-lg); }
+}
+@media (max-width: 40rem) {
+  /* Rapportkaart in het eerste scherm: drie tegels naast elkaar, zonder toelichting */
+  .preview .r-tiles { --tiles: 3 !important; gap: var(--space-xs); }
+  .preview .r-tile { padding: var(--space-xs) var(--space-sm); }
+  .preview .r-tile .label { font-size: 0.625rem; letter-spacing: 0.04em; }
+  .preview .r-figure { font-size: var(--text-lg); }
+  .preview .r-figure span { font-size: var(--text-xs); }
+  .preview .r-unit { display: none; }
+  .preview .r-title { font-size: var(--text-lg); }
+}
