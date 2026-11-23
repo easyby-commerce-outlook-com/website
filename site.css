@@ -878,3 +878,7 @@ body { text-wrap: pretty; }
 @media (max-width: 40rem) { .hero-foto__vak { margin: -56px var(--gutter) 0; } .hero-foto__beeld { aspect-ratio: 1 / 1; object-position: 22% center; } }
 @media (max-width: 72rem) and (min-width: 40.01rem) { .hero-foto__vak { margin: -120px var(--space-xl) 0 auto; } }
 @media (max-width: 72rem) and (min-width: 40.01rem) { .hero-foto__vak { max-width: 500px; } }
+
+/* Mini-scan: foto onder de tekst naast het formulier */
+.request__foto { width: 100%; max-width: 420px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 30%; margin-top: var(--space-sm); border-radius: var(--radius-tile); box-shadow: var(--shadow-md); filter: saturate(0.85) contrast(0.98); }
+@media (max-width: 60rem) { .request__foto { max-width: none; aspect-ratio: 16 / 10; object-position: 60% 25%; } }
