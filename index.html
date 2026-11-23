@@ -79,7 +79,18 @@
         <a href="over-ons.html">Over ons</a>
       </nav>
       <a class="nav__login" href="inloggen.html">Inloggen</a>
-      <a class="btn btn--ink btn--sm" href="mini-scan.html">Gratis mini-scan</a>
+      <a class="btn btn--ink btn--sm nav__cta" href="mini-scan.html">Gratis mini-scan</a>
+      <details class="menu">
+        <summary class="menu__knop" aria-label="Menu openen"><span class="menu__icoon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
+        <nav class="menu__paneel" aria-label="Menu">
+          <a href="tijdwinst.html">Tijdwinst</a>
+          <a href="ai-scan.html"><span class="nobr">AI-scan</span></a>
+          <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
+          <a href="over-ons.html">Over ons</a>
+          <a href="inloggen.html">Inloggen</a>
+          <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -88,12 +99,14 @@
       <div class="container hero__grid">
         <div>
           <div class="streepjes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <p class="hero__wat">Automatisering en <span class="nobr">AI-vindbaarheid</span> voor ondernemers</p>
           <h1 class="belofte"><span>Minder regelen.</span> <span>Meer ondernemen.</span></h1>
           <p class="lead">We zoeken uit waar je tijd verliest en automatiseren dat werk. En we laten zien hoe vindbaar je bent als klanten AI om advies vragen.</p>
-          <div class="actions">
-            <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
-            <a class="btn btn--line" href="voorbeeldrapport.html">Bekijk een voorbeeldrapport</a>
+          <div class="routes">
+            <a class="route route--donker" href="tijdwinst.html"><span class="route__label">Tijdwinst</span><span class="route__titel">Tijd besparen</span><span class="route__pijl" aria-hidden="true">→</span></a>
+            <a class="route" href="ai-scan.html"><span class="route__label"><span class="nobr">AI-scan</span></span><span class="route__titel">Beter gevonden in AI</span><span class="route__pijl" aria-hidden="true">→</span></a>
           </div>
+          <p class="hero__of">Of start direct met een <a href="mini-scan.html">gratis <span class="nobr">mini-scan</span></a> · <a href="voorbeeldrapport.html">bekijk een voorbeeldrapport</a></p>
         </div>
 
         <figure class="preview">
@@ -245,6 +258,7 @@
             <p class="price">Offerte<small>op maat, na het gesprek</small></p><a class="btn btn--line" href="ai-scan.html#werkwijze">Werkwijze</a>
           </li>
         </ul>
+        <p class="offer__hint" aria-hidden="true">Veeg voor meer →</p>
         <div class="offer__extra">
           <p><strong>Tijdwinst</strong> begint met een gratis bedrijfsbezoek, op locatie of online. Je ziet eerst wat je bespaart. Daarna krijg je voor de automatisering een vaste prijs vooraf.</p>
           <a class="btn btn--line" href="tijdwinst.html">Meer over Tijdwinst</a>
@@ -252,7 +266,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section verberg-mobiel">
       <div class="container split">
         <div class="split__text">
           <span class="label label--green">Kant-en-klare toepassing</span>
@@ -284,7 +298,7 @@
           <h2>Waar je op kunt rekenen</h2>
           <p class="lead">Afspraken die in elk rapport en elk project terugkomen.</p>
         </div>
-        <ul class="never">
+        <ul class="never never--kort">
           <li><strong>Eerlijke cijfers</strong><span>Geen opgeklopte score, maar wat we echt zagen.</span></li>
           <li><strong>Geschreven door mensen</strong><span>Het rapport schrijven we zelf, op basis van wat we gemeten en gezien hebben.</span></li>
           <li><strong>Eerst de opbrengst, dan de prijs</strong><span>Je ziet eerst wat je bespaart. Pas daarna krijg je een voorstel, met een vaste prijs vooraf.</span></li>
@@ -312,11 +326,11 @@
             <summary>Wat kost een automatisering?</summary>
             <p>Dat hangt af van wat we bouwen. Je krijgt vooraf een vaste prijs, tenzij we samen iets anders afspreken. Zo kom je niet voor verrassingen te staan.</p>
           </details>
-          <details>
+          <details class="verberg-mobiel">
             <summary>Moeten jullie langskomen?</summary>
             <p>Het kan, maar het hoeft niet. Het gratis bedrijfsbezoek kan op locatie of als online meeting. Het gesprek over de <span class="nobr">AI-scan</span> is online.</p>
           </details>
-          <details>
+          <details class="verberg-mobiel">
             <summary>Maken jullie het rapport met AI?</summary>
             <p>Nee. Het rapport is gebaseerd op wat wij gemeten en gezien hebben, en wordt niet door AI geschreven.</p>
           </details>
@@ -333,6 +347,10 @@
       </div>
     </section>
   </main>
+
+  <div class="sticky-cta" data-sticky>
+    <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
+  </div>
 
   <footer class="footer">
     <div class="container">

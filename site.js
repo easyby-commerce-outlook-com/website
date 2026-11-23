@@ -133,3 +133,30 @@
     toon(0);
   });
 })();
+
+/* Menu op mobiel: sluit bij Escape, bij een klik op een link en bij een klik
+ * ernaast. Zonder JavaScript werkt het menu ook (details/summary). */
+(function () {
+  var menu = document.querySelector('.menu');
+  if (!menu) return;
+  var knop = menu.querySelector('.menu__knop');
+  function sluit() { menu.removeAttribute('open'); }
+  menu.addEventListener('toggle', function () { knop.setAttribute('aria-label', menu.open ? 'Menu sluiten' : 'Menu openen'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.open) { sluit(); knop.focus(); } });
+  document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) sluit(); });
+  menu.querySelectorAll('.menu__paneel a').forEach(function (a) { a.addEventListener('click', sluit); });
+})();
+
+/* Vaste knop onderin (mobiel): verschijnt zodra het eerste scherm uit beeld is,
+ * en verdwijnt als de slotbalk of de footer met dezelfde knop in beeld komt. */
+(function () {
+  var balk = document.querySelector('[data-sticky]');
+  var eerste = document.querySelector('main > section');
+  if (!balk || !eerste || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('heeft-sticky-cta');
+  var voorbijEerste = false, eindeInBeeld = false;
+  function update() { balk.classList.toggle('is-zichtbaar', voorbijEerste && !eindeInBeeld); }
+  new IntersectionObserver(function (items) { voorbijEerste = !items[0].isIntersecting; update(); }).observe(eerste);
+  var einde = document.querySelector('.band, footer');
+  if (einde) new IntersectionObserver(function (items) { eindeInBeeld = items[0].isIntersecting; update(); }).observe(einde);
+})();

@@ -20,7 +20,18 @@
         <a href="over-ons.html">Over ons</a>
       </nav>
       <a class="nav__login" href="inloggen.html">Inloggen</a>
-      <a class="btn btn--ink btn--sm" href="mini-scan.html">Gratis mini-scan</a>
+      <a class="btn btn--ink btn--sm nav__cta" href="mini-scan.html">Gratis mini-scan</a>
+      <details class="menu">
+        <summary class="menu__knop" aria-label="Menu openen"><span class="menu__icoon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
+        <nav class="menu__paneel" aria-label="Menu">
+          <a href="tijdwinst.html">Tijdwinst</a>
+          <a href="ai-scan.html" aria-current="page"><span class="nobr">AI-scan</span></a>
+          <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
+          <a href="over-ons.html">Over ons</a>
+          <a href="inloggen.html">Inloggen</a>
+          <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -153,6 +164,7 @@
           <li class="tile offer--main reveal"><span class="label label--green">Stap 2 en 3</span><h3><span class="nobr">AI-scan</span></h3><p>Ontdek waar je klanten misloopt: een volledige meting, de kansen met de meeste impact, en een gesprek om ze samen door te nemen.</p><p class="price">€ 395<small>excl. btw</small></p><a class="btn btn--ink" href="mini-scan.html">Begin met de mini-scan</a></li>
           <li class="tile reveal"><span class="label">Stap 4 en 5</span><h3>Optimalisatie</h3><p>We pakken de kansen uit het rapport voor je op en meten daarna opnieuw.</p><p class="price">Offerte<small>op maat, na het gesprek</small></p></li>
         </ul>
+        <p class="offer__hint" aria-hidden="true">Veeg voor meer →</p>
       </div>
     </section>
 
@@ -172,6 +184,10 @@
           <details>
             <summary>Kunnen jullie garanderen dat AI mij gaat noemen?</summary>
             <p>Nee, dat kan niemand. Wel pakken we aan wat AI nu tegenhoudt, en met de hermeting zie je wat het heeft opgeleverd.</p>
+          </details>
+          <details>
+            <summary>Maken jullie het rapport met AI?</summary>
+            <p>Nee. Het rapport is gebaseerd op wat wij gemeten en gezien hebben, en wordt niet door AI geschreven.</p>
           </details>
           <details>
             <summary>Wat gebeurt er in het gesprek?</summary>
@@ -194,6 +210,10 @@
       </div>
     </section>
   </main>
+
+  <div class="sticky-cta" data-sticky>
+    <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
+  </div>
 
   <footer class="footer">
     <div class="container">
