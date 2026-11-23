@@ -768,3 +768,38 @@ body { text-wrap: pretty; }
   .preview .r-unit { display: none; }
   .preview .r-title { font-size: var(--text-lg); }
 }
+
+/* ------------------------------------------------------------------------
+ * Warmte en afwerking
+ * --------------------------------------------------------------------- */
+
+/* Zand: warme ondergrond voor de vragen */
+.section--zand { background: var(--color-sand); border-top: 0; }
+.section--zand + .section, .section + .section--zand { border-top: 0; }
+.section--zand .faq, .section--zand .faq details { border-color: var(--color-sand-line); }
+
+/* Waarom EasyBY: groot lichtgroen vlak met het verhaal */
+.verhaal { background: var(--color-green-tint); border-top: 0; }
+.verhaal + .section { border-top: 0; }
+.verhaal__in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: start; }
+.verhaal h2 { margin-top: var(--space-sm); }
+.verhaal__tekst { display: grid; gap: var(--space-md); font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink); }
+.verhaal__tekst p { max-width: 58ch; }
+.verhaal__tekst strong { color: var(--color-green-dark); }
+.verhaal__onder { margin-top: var(--space-xs); font-size: var(--text-md); font-weight: var(--weight-semibold); color: var(--color-ink-2); }
+.verhaal__onder::before { content: ""; display: inline-block; width: 32px; height: 2px; margin-right: var(--space-sm); vertical-align: middle; background: var(--color-green); }
+.verhaal__link { justify-self: start; font-size: var(--text-md); font-weight: var(--weight-semibold); color: var(--color-ink); text-decoration-color: var(--color-green); }
+.verhaal--kort .verhaal__tekst { font-size: var(--text-lg); }
+@media (max-width: 60rem) { .verhaal__in { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); } }
+@media (max-width: 40rem) { .verhaal__tekst { font-size: var(--text-md); } }
+
+/* Iconen bij de werkwijze-stappen */
+.step { position: relative; }
+.step__icoon { position: absolute; top: var(--space-lg); right: var(--space-lg); width: 32px; height: 32px; color: var(--color-green); opacity: 0.9; }
+.step h3 { padding-right: var(--space-2xl); }
+@media (max-width: 40rem) { .step__icoon { top: var(--space-md); right: var(--space-md); width: 26px; height: 26px; } }
+
+/* 404 */
+.niet-gevonden { padding-block: var(--space-3xl); background: var(--color-surface); min-height: 60vh; }
+.niet-gevonden h1 { margin-top: var(--space-xs); font-size: var(--text-display-s); }
+.niet-gevonden .lead { margin-top: var(--space-md); color: var(--color-ink-2); }

@@ -29,6 +29,8 @@
   --color-green-on-dark: #22c55e;  /* "BY" op antraciet */
   --color-paper: #ffffff;
   --color-surface: #f4f5f2;        /* kalk: vlak voor website */
+  --color-sand: #f6f2ea;           /* zand: warme ondergrond (alleen website) */
+  --color-sand-line: #e6dfd1;      /* haarlijn op zand */
   --color-track: #eef0ec;
   --color-rule: #d9dcd6;           /* steengrijs: haarlijnen */
   --color-rule-2: #c9cdc4;
