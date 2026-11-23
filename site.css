@@ -844,3 +844,37 @@ body { text-wrap: pretty; }
   .fotostrook img { aspect-ratio: 4 / 3; object-position: 30% 50%; }
   .verhaal:has(+ .fotostrook) { padding-bottom: calc(var(--section-gap-s) + var(--space-2xl)); }
 }
+
+/* Tijdwinst: brede foto met de tekst in een vak over de lege muur */
+.hero--foto { padding-block: var(--space-xl) var(--space-3xl); }
+.hero-foto { position: relative; }
+.hero-foto__beeld { width: 100%; height: auto; max-height: 680px; aspect-ratio: 3 / 2; object-fit: cover; object-position: 20% center; border-radius: var(--radius-tile); box-shadow: var(--shadow-md); filter: saturate(0.85) contrast(0.98); }
+.hero-foto__vak { position: absolute; top: 50%; right: calc(var(--gutter) + var(--space-2xl)); translate: 0 -50%; width: min(520px, 42%); display: grid; gap: var(--space-md); padding: var(--space-xl); background: color-mix(in oklab, var(--color-paper) 94%, transparent); backdrop-filter: blur(6px); border-radius: var(--radius-tile); box-shadow: var(--shadow-lg); }
+.hero-foto__vak .eyebrow { margin-bottom: 0; }
+.hero-foto__vak h1 { font-size: var(--text-display-s); max-width: none; }
+.hero-foto__vak .lead { margin-top: 0; color: var(--color-ink-2); font-size: var(--text-md); }
+.hero-foto__vak .actions { margin-top: var(--space-xs); }
+@media (max-width: 72rem) { .hero-foto__vak { width: min(480px, 50%); padding: var(--space-lg); } .hero-foto__vak h1 { font-size: var(--text-3xl); } }
+@media (max-width: 52rem) {
+  .hero-foto__beeld { aspect-ratio: 4 / 3; object-position: 15% center; }
+  .hero-foto__vak { position: relative; top: auto; right: auto; translate: none; width: auto; margin: -64px var(--space-md) 0; }
+}
+@media (max-width: 40rem) {
+  .hero--foto { padding-block: var(--space-md) var(--space-2xl); }
+  .hero-foto { padding-inline: 0; }
+  .hero-foto__beeld { border-radius: 0; aspect-ratio: 1 / 1; object-position: 22% center; }
+  .hero-foto__vak { margin: -56px var(--gutter) 0; padding: var(--space-lg); }
+}
+
+/* Rapportkaart in "Wat in het Tijdwinstrapport staat" */
+.split__beeld { display: grid; gap: var(--space-lg); align-content: start; }
+.r-onder { margin-top: calc(var(--space-sm) * -1); font-size: var(--text-xs); color: var(--color-muted); }
+.hero-foto__vak { right: calc(var(--gutter) + var(--space-xl)); width: min(460px, 36%); padding: var(--space-xl) var(--space-lg); }
+.hero-foto__vak .actions .btn { min-height: 44px; }
+@media (max-width: 72rem) {
+  .hero-foto__beeld { aspect-ratio: 16 / 10; object-position: 15% center; }
+  .hero-foto__vak { position: relative; top: auto; right: auto; translate: none; width: auto; max-width: 640px; margin: -96px var(--space-xl) 0; }
+}
+@media (max-width: 40rem) { .hero-foto__vak { margin: -56px var(--gutter) 0; } .hero-foto__beeld { aspect-ratio: 1 / 1; object-position: 22% center; } }
+@media (max-width: 72rem) and (min-width: 40.01rem) { .hero-foto__vak { margin: -120px var(--space-xl) 0 auto; } }
+@media (max-width: 72rem) and (min-width: 40.01rem) { .hero-foto__vak { max-width: 500px; } }
