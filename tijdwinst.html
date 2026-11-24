@@ -49,9 +49,10 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero__grid">
-        <div>
+    <section class="hero hero--foto">
+      <div class="container hero-foto">
+        <img class="hero-foto__beeld" src="beeld/tijdwinst-werkplaats-1536.webp" srcset="beeld/tijdwinst-werkplaats-800.webp 800w, beeld/tijdwinst-werkplaats-1536.webp 1536w" sizes="(max-width: 90rem) 100vw, 1312px" width="1536" height="1024" alt="Een fietsenmaker staat in zijn werkplaats aan de werkbank en kijkt nadenkend naar zijn laptop" fetchpriority="high">
+        <div class="hero-foto__vak">
           <span class="label label--green eyebrow">Automatisering</span>
           <h1>Tijd terug, zwart op wit.</h1>
           <p class="lead">We zoeken uit waar jij en je team tijd verliezen, zetten dat op een rij in een Tijdwinstrapport en bouwen er een passende automatisering voor.</p>
@@ -60,20 +61,6 @@
             <a class="btn btn--line" href="voorbeeldrapport.html#tijdwinst">Voorbeeldrapport</a>
           </div>
         </div>
-        <figure class="preview preview--single">
-          <div class="r-sheet r-sheet--b" aria-label="Voorbeeld: samenvatting van een Tijdwinstrapport">
-            <div class="r-head"><span class="wordmark">Easy<span>BY</span></span><span>Tijdwinstrapport</span></div>
-            <div class="r-tiles" style="--tiles: 2">
-              <div class="r-tile r-tile--dark"><div class="label">Tijdlekken</div><div class="r-figure">6,5<span> uur</span></div><div class="r-unit">per week</div></div>
-              <div class="r-tile r-tile--green"><div class="label">Besparing</div><div class="r-figure">€ 10.465</div><div class="r-unit">per jaar</div></div>
-            </div>
-            <div class="r-bars">
-              <div class="r-bar"><span class="r-bar__name">Offertes overtypen</span><span class="r-bar__track"><span class="r-bar__fill" style="--v: 1"></span></span><span class="r-bar__value">3 u/wk</span></div>
-              <div class="r-bar"><span class="r-bar__name">Facturen inboeken</span><span class="r-bar__track"><span class="r-bar__fill" style="--v: 0.5"></span></span><span class="r-bar__value">1,5 u/wk</span></div>
-            </div>
-          </div>
-          <figcaption>Voorbeeldrapport, gevuld met voorbeelddata.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -105,11 +92,26 @@
           </ul>
           <a class="btn btn--line" href="voorbeeldrapport.html#tijdwinst">Bekijk het voorbeeld</a>
         </div>
+        <div class="split__beeld">
+            <div class="r-sheet r-sheet--b r-sheet--los" aria-label="Voorbeeld: samenvatting van een Tijdwinstrapport">
+              <div class="r-head"><span class="wordmark">Easy<span>BY</span></span><span>Tijdwinstrapport</span></div>
+              <div class="r-tiles" style="--tiles: 2">
+                <div class="r-tile r-tile--dark"><div class="label">Tijdlekken</div><div class="r-figure">6,5<span> uur</span></div><div class="r-unit">per week</div></div>
+                <div class="r-tile r-tile--green"><div class="label">Besparing</div><div class="r-figure">€ 10.465</div><div class="r-unit">per jaar</div></div>
+              </div>
+              <div class="r-bars">
+                <div class="r-bar"><span class="r-bar__name">Offertes overtypen</span><span class="r-bar__track"><span class="r-bar__fill" style="--v: 1"></span></span><span class="r-bar__value">3 u/wk</span></div>
+                <div class="r-bar"><span class="r-bar__name">Facturen inboeken</span><span class="r-bar__track"><span class="r-bar__fill" style="--v: 0.5"></span></span><span class="r-bar__value">1,5 u/wk</span></div>
+              </div>
+            </div>
+
+            <p class="r-onder">Voorbeeldrapport, gevuld met voorbeelddata.</p>
         <ul class="rows">
           <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg></span><h3>Klantenservice</h3><p>Mail sorteren, bestelling erbij zoeken, antwoord klaarzetten.</p><a class="state state--live" href="klantenservice.html">Bekijk</a></li>
           <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6h9" /><path d="M11 12h9" /><path d="M12 18h8" /><path d="M4 16a2 2 0 1 1 4 0c0 .591 -.5 1 -1 1.5l-3 2.5h4" /><path d="M6 10v-6l-2 2" /></svg></span><h3>Administratie</h3><p>Offertes, facturen en bonnen die nu worden overgetypt.</p><span class="state">Op maat</span></li>
           <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 12l3 2" /><path d="M12 7v5" /></svg></span><h3>Planning</h3><p>Afspraken bevestigen, herinneren en verzetten.</p><span class="state">Op maat</span></li>
         </ul>
+        </div>
       </div>
     </section>
 
