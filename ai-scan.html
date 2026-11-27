@@ -7,6 +7,8 @@
   <meta name="description" content="De AI-scan laat zien hoe AI over je winkel praat, of dat klopt en wie AI wél noemt. Mini-scan gratis, AI-scan € 395 excl. btw.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Meting zonder cookies: vul hier de GoatCounter-naam in (bijv. easyby). Leeg = geen meting. -->
+  <meta name="goatcounter" content="">
   <meta name="theme-color" content="#1f2937">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
@@ -21,6 +23,97 @@
   <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="site.css">
   <script src="site.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "AI-scan: AI-vindbaarheid voor winkels",
+      "provider": {
+        "@id": "https://easy-by.nl/#organisatie"
+      },
+      "url": "https://easy-by.nl/ai-scan.html",
+      "areaServed": "NL",
+      "serviceType": "AI-vindbaarheid",
+      "description": "Laat zien hoe AI-assistenten over een winkel praten, of dat klopt en wie AI wél noemt, met een rapport en een gesprek.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Mini-scan",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "AI-scan (rapport en gesprek)",
+          "price": "395.00",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "395.00",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Waarom zou ik hier nu al mee bezig zijn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omdat AI nu leert welke winkels het aanbeveelt. Hoe langer verkeerde of ontbrekende informatie blijft staan, hoe vaker AI die herhaalt. Wie nu begint, staat er straks al bij."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom geen percentage of score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI-antwoorden verschillen per keer. Eén cijfer zou meer zekerheid suggereren dan er is. Daarom laten we zien wat we echt zagen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kunnen jullie garanderen dat AI mij gaat noemen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee, dat kan niemand. Wel pakken we aan wat AI nu tegenhoudt, en met de hermeting zie je wat het heeft opgeleverd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Maken jullie het rapport met AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee. Het rapport is gebaseerd op wat wij gemeten en gezien hebben, en wordt niet door AI geschreven."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat gebeurt er in het gesprek?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We lopen het rapport samen door, online. Je hoort wat de kansen betekenen en wat je zelf kunt doen. Wil je dat wij ze oppakken, dan maken we daarna een offerte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat is het verschil tussen de mini-scan en de AI-scan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De mini-scan is een eerste blik, gratis en binnen 3 werkdagen in je mail. De AI-scan is de volledige meting, met een rapport, de belangrijkste kansen en een gesprek."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="nav">
@@ -32,7 +125,6 @@
         <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
         <a href="over-ons.html">Over ons</a>
       </nav>
-      <a class="nav__login" href="inloggen.html">Inloggen</a>
       <a class="btn btn--ink btn--sm nav__cta" href="mini-scan.html">Gratis mini-scan</a>
       <details class="menu">
         <summary class="menu__knop" aria-label="Menu openen"><span class="menu__icoon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
@@ -41,7 +133,6 @@
           <a href="ai-scan.html" aria-current="page"><span class="nobr">AI-scan</span></a>
           <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
           <a href="over-ons.html">Over ons</a>
-          <a href="inloggen.html">Inloggen</a>
           <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
         </nav>
       </details>

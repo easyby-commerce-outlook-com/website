@@ -1,0 +1,15 @@
+# EasyBY
+
+> EasyBY V.O.F. helpt ondernemers met twee dingen: tijd terugwinnen door terugkerend werk te automatiseren (Tijdwinst), en beter gevonden worden als klanten AI-assistenten zoals ChatGPT en Gemini om advies vragen (AI-scan). Twee vennoten, online, door heel Nederland. KvK 96182245.
+
+## Diensten
+
+- [Tijdwinst](https://easy-by.nl/tijdwinst.html): een gratis bedrijfsbezoek (op locatie of online), een Tijdwinstrapport met de tijdlekken en wat je bespaart, en daarna een automatisering op maat met een vaste prijs vooraf.
+- [AI-scan](https://easy-by.nl/ai-scan.html): meet hoe AI over een winkel praat, of dat klopt en wie AI wél noemt. Rapport met de belangrijkste kansen en een gesprek. € 395 excl. btw. Optimalisatie en hermeting op offerte.
+- [Gratis mini-scan](https://easy-by.nl/mini-scan.html): een eerste blik op hoe AI je winkel noemt en of het klopt, binnen 3 werkdagen per mail.
+- [Klantenservice](https://easy-by.nl/klantenservice.html): kant-en-klare automatisering die klantenservice-mail sorteert, de bestelling erbij zoekt en een antwoord klaarzet.
+
+## Meer
+
+- [Voorbeeldrapport](https://easy-by.nl/voorbeeldrapport.html): voorblad en samenvatting van een AI-scanrapport en een Tijdwinstrapport, met voorbeelddata.
+- [Over ons](https://easy-by.nl/over-ons.html): wie EasyBY is en waarom.

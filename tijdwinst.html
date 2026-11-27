@@ -7,6 +7,8 @@
   <meta name="description" content="EasyBY zoekt uit waar je tijd verliest, zet het op een rij in een Tijdwinstrapport en bouwt een passende automatisering. Maatwerk, met eerst de besparing zwart op wit.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Meting zonder cookies: vul hier de GoatCounter-naam in (bijv. easyby). Leeg = geen meting. -->
+  <meta name="goatcounter" content="">
   <meta name="theme-color" content="#1f2937">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
@@ -21,6 +23,69 @@
   <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="site.css">
   <script src="site.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Tijdwinst: automatisering voor ondernemers",
+      "provider": {
+        "@id": "https://easy-by.nl/#organisatie"
+      },
+      "url": "https://easy-by.nl/tijdwinst.html",
+      "areaServed": "NL",
+      "serviceType": "Bedrijfsautomatisering",
+      "description": "Een gratis bedrijfsbezoek, een Tijdwinstrapport met wat je bespaart, en daarna een automatisering op maat met een vaste prijs vooraf."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost een automatisering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dat is maatwerk, omdat elk tijdlek anders is. Je ziet eerst in het Tijdwinstrapport wat je bespaart. Daarna krijg je per automatisering een vaste prijs vooraf, tenzij we samen iets anders afspreken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Staat de prijs in het Tijdwinstrapport?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee. In het rapport staat alleen wat jij bespaart, in uren en euro's per jaar. Zo kun je het rapport rustig lezen en delen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Moet ik software vervangen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meestal niet. We bouwen zoveel mogelijk op wat je al gebruikt, zoals je postbus, webshop of boekhouding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kost het bedrijfsbezoek?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Niets. Het bedrijfsbezoek is gratis, op locatie of als online meeting. We zijn niet aan een regio gebonden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat als er later iets moet worden aangepast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Onderhoud en aanpassingen spreken we samen af, zodat het past bij hoe jij werkt."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="nav">
@@ -32,7 +97,6 @@
         <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
         <a href="over-ons.html">Over ons</a>
       </nav>
-      <a class="nav__login" href="inloggen.html">Inloggen</a>
       <a class="btn btn--ink btn--sm nav__cta" href="mini-scan.html">Gratis mini-scan</a>
       <details class="menu">
         <summary class="menu__knop" aria-label="Menu openen"><span class="menu__icoon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
@@ -41,7 +105,6 @@
           <a href="ai-scan.html"><span class="nobr">AI-scan</span></a>
           <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
           <a href="over-ons.html">Over ons</a>
-          <a href="inloggen.html">Inloggen</a>
           <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
         </nav>
       </details>

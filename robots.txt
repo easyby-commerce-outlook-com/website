@@ -1,0 +1,6 @@
+# Alle zoekmachines en AI-assistenten zijn welkom.
+User-agent: *
+Allow: /
+Disallow: /archief/
+
+Sitemap: https://easy-by.nl/sitemap.xml
