@@ -18,6 +18,7 @@ Statische HTML en CSS, zonder build-stap of server-code.
 | `404.html` | Pagina voor adressen die niet bestaan (absolute paden, want GitHub Pages toont hem op elk adres) |
 | `beeld/` | Foto's voor de site (WebP, in twee formaten) |
 | `favicon.svg`, `apple-touch-icon.png`, `og.png` | Icoon in het tabblad, icoon op het beginscherm en de afbeelding bij het delen van een link |
+| Meting | GoatCounter zonder cookies, dashboard op easyby.goatcounter.com. De naam staat in `<meta name="goatcounter">` op elke pagina; leeg maken zet de meting uit |
 | `sitemap.xml`, `robots.txt`, `llms.txt` | Voor zoekmachines en AI-assistenten: welke pagina's er zijn, wat ze mogen lezen, en een korte uitleg over EasyBY |
 | `tokens.css` | De EasyBY-huisstijl (kleuren, lettertype, vormen). Pas de huisstijl alleen hier aan |
 | `site.js` | Carrousel "Wist je dat?" (wisselt automatisch, pauzeert bij muis, focus of pauzeknop). Beweging: rapportbladen komen op, cijfers tellen op, balken, streepjes en de tijdlijn lopen vol, telkens opnieuw als ze in beeld komen. Niets bij voorkeur voor minder beweging |
@@ -28,7 +29,6 @@ Bekijken: open `index.html` in de browser.
 
 ## Nog in te vullen
 
-- Meting (GoatCounter, zonder cookies): vul in elke pagina de naam van het GoatCounter-account in bij `<meta name="goatcounter" content="">`. Zolang die leeg is, wordt er niets gemeten. Gemeten worden paginabezoeken en, als gebeurtenis, aanvragen van de mini-scan en klikken op mail en telefoon.
 
 - Contactgegevens: `hallo@easy-by.nl` en `06 00 00 00 00` zijn voorbeeldwaarden (zoek op `MOCK`).
 - Het mini-scanformulier opent het mailprogramma van de bezoeker (mailto); er is geen externe formulierdienst.
