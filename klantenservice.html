@@ -7,6 +7,8 @@
   <meta name="description" content="EasyBY sorteert je klantenservice-mail, zoekt de bestelling erbij en zet een antwoord klaar. Werkt met je eigen postbus en webshop, zoals Shopify.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Meting zonder cookies: vul hier de GoatCounter-naam in (bijv. easyby). Leeg = geen meting. -->
+  <meta name="goatcounter" content="">
   <meta name="theme-color" content="#1f2937">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
@@ -21,6 +23,58 @@
   <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="site.css">
   <script src="site.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost het?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Klantenservice is maatwerk. De prijs hangt af van de instellingen en het aantal mails per maand. Je krijgt vooraf een voorstel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Moet ik iets installeren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee. Je logt in op je eigen omgeving via de browser en koppelt daar je postbus en winkel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat als het systeem het antwoord niet weet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dan legt het de mail aan jou voor. Het verzint niets en vraagt zo nodig om een ordernummer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Merkt mijn klant dat er automatisering achter zit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Antwoorden gaan uit vanaf je eigen adres, in jouw toon en ondertekend met je team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar staan mijn gegevens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Op een eigen, afgeschermde omgeving per winkel, versleuteld, op een server in de EU."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="nav">
@@ -32,7 +86,6 @@
         <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
         <a href="over-ons.html">Over ons</a>
       </nav>
-      <a class="nav__login" href="inloggen.html">Inloggen</a>
       <a class="btn btn--ink btn--sm nav__cta" href="mini-scan.html">Gratis mini-scan</a>
       <details class="menu">
         <summary class="menu__knop" aria-label="Menu openen"><span class="menu__icoon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
@@ -41,7 +94,6 @@
           <a href="ai-scan.html"><span class="nobr">AI-scan</span></a>
           <a href="voorbeeldrapport.html">Voorbeeldrapport</a>
           <a href="over-ons.html">Over ons</a>
-          <a href="inloggen.html">Inloggen</a>
           <a class="btn btn--ink" href="mini-scan.html">Gratis mini-scan</a>
         </nav>
       </details>

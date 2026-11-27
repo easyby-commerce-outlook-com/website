@@ -58,6 +58,14 @@
 
   document.querySelectorAll('.r-sheet, .reveal, .streepjes, .timeline').forEach(function (el) { io.observe(el); });
 
+  // Bij afdrukken alle cijfers op hun eindwaarde zetten.
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('.r-figure, .stat__getal').forEach(function (f) {
+      f._beurt = (f._beurt || 0) + 1;
+      if (f.dataset.eind !== undefined && f.firstChild) f.firstChild.nodeValue = f.dataset.eind;
+    });
+  });
+
   // Een dia die opnieuw zichtbaar wordt, speelt zijn animatie opnieuw af.
   window.easybySpeelOpnieuw = function (dia) {
     dia.querySelectorAll('.reveal').forEach(function (el) {
@@ -159,4 +167,29 @@
   new IntersectionObserver(function (items) { voorbijEerste = !items[0].isIntersecting; update(); }).observe(eerste);
   var einde = document.querySelector('.band, footer');
   if (einde) new IntersectionObserver(function (items) { eindeInBeeld = items[0].isIntersecting; update(); }).observe(einde);
+})();
+
+/* Meting zonder cookies (GoatCounter). Staat pas aan als in de pagina
+ * <meta name="goatcounter" content="naam"> is ingevuld. Telt paginabezoeken en,
+ * als gebeurtenis, aanvragen van de mini-scan en klikken op mail en telefoon. */
+(function () {
+  var meta = document.querySelector('meta[name="goatcounter"]');
+  var naam = meta && meta.content.trim();
+  if (!naam || !/^[a-z0-9-]+$/.test(naam)) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', 'https://' + naam + '.goatcounter.com/count');
+  document.head.appendChild(s);
+  function tel(pad, titel) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: pad, title: titel, event: true });
+  }
+  var form = document.getElementById('mini-scan-form');
+  if (form) form.addEventListener('submit', function () { if (form.checkValidity()) tel('mini-scan-aanvraag', 'Mini-scan aangevraagd'); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+    if (!a) return;
+    var soort = a.getAttribute('href').indexOf('tel:') === 0 ? 'bellen' : 'mailen';
+    tel('klik-' + soort, 'Klik: ' + soort + ' (' + location.pathname + ')');
+  });
 })();
